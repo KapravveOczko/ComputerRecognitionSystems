@@ -12,8 +12,8 @@ import java.util.List;
 
 public class SgmConverter {
 
-    List<String> placesList;
-    ArrayList<Article> articleList;
+    private List<String> placesList;
+    private  ArrayList<Article> articleList;
 
     public SgmConverter() {
         this.placesList = this.fillPlaces();
@@ -84,10 +84,24 @@ public class SgmConverter {
 //                System.out.println("-----------------------------");
 //                System.out.println(content);
 //                System.out.println("-----------------------------");
-                Article article = new Article(placesList, content);
+                Article article = new Article(articlePlaces, content);
                 this.articleList.add(article);
             }
 
+    }
+
+    public void getArticlesFromData(){
+        String fileName = "reut2-0";
+        String currFileName = "";
+        for(int i = 0; i < 22; i++){
+            if(i < 10){
+                currFileName = fileName + "0" + i;
+            }
+            else{
+                currFileName = fileName + i;
+            }
+            fillArticleList(currFileName);
+        }
     }
 
     public ArrayList<Article> getArticleList() {
@@ -95,8 +109,15 @@ public class SgmConverter {
     }
 
     public void showArticleList(){
+        System.out.println("num of articles: " + getArticleListCount());
         for (Article article: articleList) {
+            System.out.println("===");
+            System.out.println("Places: " + article.getPlaces());
             System.out.println(article.getContent());
         }
+    }
+
+    public int getArticleListCount(){
+        return this.articleList.size();
     }
 }
