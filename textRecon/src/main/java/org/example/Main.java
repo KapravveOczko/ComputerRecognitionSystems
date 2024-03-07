@@ -5,8 +5,8 @@ public class Main {
 
         SgmConverter converter = new SgmConverter();
         converter.getArticlesFromData();
-//        converter.showArticleList();
-        System.out.println(converter.getArticleListCount());
+        converter.showArticleList();
+//        System.out.println(converter.getArticleListCount());
 
     }
 }
