@@ -362,7 +362,7 @@ public class DictionariesCreator {
         politicians.put("Crow", "canada");
 
 //        france
-        politicians.put("De Gaulle", "france");
+        politicians.put("Gaulle", "france");
         politicians.put("Pompidou", "france");
         politicians.put("Giscard", "france");
         politicians.put("Mitterrand", "france");
@@ -411,6 +411,19 @@ public class DictionariesCreator {
 
     private void createCurrenciesDictionary(){
 
+
+        //        canada
+        currencies.put("dollar", "canada");
+        currencies.put("dollars", "canada");
+        currencies.put("CA$", "canada");
+        currencies.put("CAN$", "canada");
+        currencies.put("C$", "canada");
+        currencies.put("CAD", "canada");
+        currencies.put("cent", "canada");
+        currencies.put("cents", "canada");
+        currencies.put("¢", "canada");
+        currencies.put("CA¢", "canada");
+        currencies.put("C¢", "canada");
 //        usa
         currencies.put("dollar", "usa");
         currencies.put("dollars", "usa");
@@ -436,19 +449,6 @@ public class DictionariesCreator {
         currencies.put("yens", "japan");
         currencies.put("¥", "japan");
         currencies.put("JPY", "japan");
-
-//        canada
-        currencies.put("dollar", "canada");
-        currencies.put("dollars", "canada");
-        currencies.put("CA$", "canada");
-        currencies.put("CAN$", "canada");
-        currencies.put("C$", "canada");
-        currencies.put("CAD", "canada");
-        currencies.put("cent", "canada");
-        currencies.put("cents", "canada");
-        currencies.put("¢", "canada");
-        currencies.put("CA¢", "canada");
-        currencies.put("C¢", "canada");
 
 
 //        west-germany

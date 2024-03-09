@@ -80,7 +80,8 @@ public class SgmConverter {
             }
 
             if (isIncluded){
-                String content = doc.getElementsByTag("TEXT").text();
+                String content = doc.getElementsByTag("TEXT").text().replaceAll("[\n]", "");
+                content = content.substring(0, doc.getElementsByTag("TITLE").text().length()) + content.substring(doc.getElementsByTag("TITLE").text().length() + doc.getElementsByTag("DATELINE").text().length()+1, content.length()-7);
 //                System.out.println("-----------------------------");
 //                System.out.println(content);
 //                System.out.println("-----------------------------");
