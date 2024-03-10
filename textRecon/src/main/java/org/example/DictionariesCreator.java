@@ -8,11 +8,13 @@ public class DictionariesCreator {
     Map<String, String> politicians = new HashMap<>();
     Map<String, String> currencies = new HashMap<>();
     Map<String, String> keywords = new HashMap<>();
+    Map<String, String> geography = new HashMap<>();
 
     public DictionariesCreator() {
         createPoliticianDictionary();
         createCurrenciesDictionary();
         createKeyWordsDictionary();
+        createGeographyWordsDictionary();
     }
 
     public Map<String, String> getPoliticians() {
@@ -25,6 +27,10 @@ public class DictionariesCreator {
 
     public Map<String, String> getKeywords() {
         return keywords;
+    }
+
+    public Map<String, String> getGeography(){
+        return geography;
     }
 
     private void createPoliticianDictionary() {
@@ -473,11 +479,390 @@ public class DictionariesCreator {
         currencies.put("c", "france");
     }
 
+    private void createGeographyWordsDictionary() {
+
+//        usa
+        geography.put("USA", "usa");
+        geography.put("US", "usa");
+        geography.put("U.S", "usa");
+        geography.put("States", "usa");
+        geography.put("America", "usa");
+        geography.put("states", "usa");
+        geography.put("Alabama", "usa");
+        geography.put("Alaska", "usa");
+        geography.put("Arizona", "usa");
+        geography.put("Arkansas", "usa");
+        geography.put("California", "usa");
+        geography.put("Colorado", "usa");
+        geography.put("Connecticut", "usa");
+        geography.put("Delaware", "usa");
+        geography.put("Florida", "usa");
+        geography.put("Georgia", "usa");
+        geography.put("Hawaii", "usa");
+        geography.put("Idaho", "usa");
+        geography.put("Illinois", "usa");
+        geography.put("Indiana", "usa");
+        geography.put("Iowa", "usa");
+        geography.put("Kansas", "usa");
+        geography.put("Kentucky", "usa");
+        geography.put("Louisiana", "usa");
+        geography.put("Maine", "usa");
+        geography.put("Maryland", "usa");
+        geography.put("Massachusetts", "usa");
+        geography.put("Michigan", "usa");
+        geography.put("Minnesota", "usa");
+        geography.put("Mississippi", "usa");
+        geography.put("Missouri", "usa");
+        geography.put("Montana", "usa");
+        geography.put("Nebraska", "usa");
+        geography.put("Nevada", "usa");
+        geography.put("Hampshire", "usa");
+        geography.put("Jersey", "usa");
+        geography.put("Mexico", "usa");
+        geography.put("York", "usa");
+        geography.put("Ohio", "usa");
+        geography.put("Oklahoma", "usa");
+        geography.put("Oregon", "usa");
+        geography.put("Pennsylvania", "usa");
+        geography.put("Rhode", "usa");
+        geography.put("Carolina", "usa");
+        geography.put("Dakota", "usa");
+        geography.put("Tennessee", "usa");
+        geography.put("Texas", "usa");
+        geography.put("Utah", "usa");
+        geography.put("Vermont", "usa");
+        geography.put("Virginia", "usa");
+        geography.put("Washington", "usa");
+        geography.put("Wisconsin", "usa");
+        geography.put("Wyoming", "usa");
+        geography.put("Hollywood", "usa");
+        geography.put("Angeles", "usa");
+        geography.put("Vegas", "usa");
+
+//      uk
+        geography.put("UK", "uk");
+        geography.put("Britain", "uk");
+        geography.put("British", "uk");
+        geography.put("England", "uk");
+        geography.put("English", "uk");
+        geography.put("Scotland", "uk");
+        geography.put("Scottish", "uk");
+        geography.put("Wales", "uk");
+        geography.put("Welsh", "uk");
+        geography.put("Ireland", "uk");
+        geography.put("Irish", "uk");
+        geography.put("London", "uk");
+
+//        japan
+        geography.put("Japan", "japan");
+        geography.put("Japanese", "japan");
+        geography.put("Tokyo", "japan");
+        geography.put("Kyoto", "japan");
+        geography.put("Osaka", "japan");
+        geography.put("Nagoya", "japan");
+        geography.put("Yokohama", "japan");
+        geography.put("Hiroshima", "japan");
+        geography.put("Nagasaki", "japan");
+        geography.put("Ogasawara", "japan");
+        geography.put("Okinawa", "japan");
+        geography.put("Hokkaido", "japan");
+        geography.put("Nippon", "japan");
+
+//        canada
+        geography.put("Canada", "canada");
+        geography.put("Canadian", "canada");
+        geography.put("Montreal", "canada");
+        geography.put("Yukon", "canada");
+        geography.put("Columbia", "canada");
+
+//        west-germany
+        geography.put("Deutschland", "west-germany");
+        geography.put("Westphalia", "west-germany");
+        geography.put("Rhineland", "west-germany");
+        geography.put("Palatinate", "west-germany");
+        geography.put("Rhine", "west-germany");
+        geography.put("Bundesrepublik", "west-germany");
+        geography.put("Frankfurt", "west-germany");
+        geography.put("Germany", "west-germany");
+        geography.put("Deutsche", "west-germany");
+        geography.put("German", "west-germany");
+        geography.put("Baden-Württemberg", "west-germany");
+        geography.put("Württemberg", "west-germany");
+        geography.put("Baden", "west-germany");
+        geography.put("Bavaria", "west-germany");
+        geography.put("Brandenburg", "west-germany");
+        geography.put("Bremen", "west-germany");
+        geography.put("Hamburg", "west-germany");
+        geography.put("Hesse", "west-germany");
+        geography.put("Saxony", "west-germany");
+
+//        france
+        geography.put("France", "france");
+        geography.put("French", "france");
+        geography.put("Paris", "france");
+        geography.put("French Alps", "france");
+        geography.put("Provence", "france");
+        geography.put("Normandy", "france");
+        geography.put("Bordeaux", "france");
+        geography.put("Riviera", "france");
+        geography.put("Loire", "france");
+        geography.put("Pyrenees", "france");
+        geography.put("Alsace", "france");
+        geography.put("Brittany", "france");
+        geography.put("Corsica", "france");
+        geography.put("Île-de-France", "france");
+        geography.put("Marseille", "france");
+        geography.put("Lyon", "france");
+        geography.put("Strasbourg", "france");
+        geography.put("Nice", "france");
+        geography.put("Toulouse", "france");
+        geography.put("Montpellier", "france");
+        geography.put("Nantes", "france");
+
+    }
+    private void createKeyWordsDictionary(){
+
+//        usa
+        keywords.put("Canyon", "usa");
+        keywords.put("Yellowstone", "usa");
+        keywords.put("Rushmore", "usa");
+        keywords.put("Niagara", "usa");
+        keywords.put("Liberty", "usa");
+        keywords.put("Everglades", "usa");
+        keywords.put("NYSE", "usa");
+        keywords.put("NASDAQ", "usa");
+        keywords.put("IRS", "usa");
+        keywords.put("S&P", "usa");
+        keywords.put("Treasury", "usa");
+        keywords.put("Fannie Mae", "usa");
+        keywords.put("SEC", "usa");
+        keywords.put("CFTC", "usa");
+        keywords.put("CBOE", "usa");
+        keywords.put("CME", "usa");
+        keywords.put("FINRA", "usa");
+        keywords.put("FHFA", "usa");
+
+//        uk
+        keywords.put("Edinburgh", "uk");
+        keywords.put("Cardiff", "uk");
+        keywords.put("Belfast", "uk");
+        keywords.put("Thames", "uk");
+        keywords.put("Channel", "uk");
+        keywords.put("Buckingham", "uk");
+        keywords.put("Westminster", "uk");
+        keywords.put("Stonehenge", "uk");
+        keywords.put("Loch Ness", "uk");
+        keywords.put("The Shard", "uk");
+        keywords.put("Big Ben", "uk");
+        keywords.put("Trafalgar", "uk");
+        keywords.put("Oxford", "uk");
+        keywords.put("Cambridge", "uk");
+        keywords.put("Tate", "uk");
+
+//        japan
+        keywords.put("Shinto", "japan");
+        keywords.put("Buddhism", "japan");
+        keywords.put("Samurai", "japan");
+        keywords.put("Ninja", "japan");
+        keywords.put("Geisha", "japan");
+        keywords.put("Sushi", "japan");
+        keywords.put("Sake", "japan");
+        keywords.put("Sumo", "japan");
+        keywords.put("Anime", "japan");
+        keywords.put("Manga", "japan");
+        keywords.put("Nintendo", "japan");
+        keywords.put("Sony", "japan");
+        keywords.put("Toyota", "japan");
+        keywords.put("Honda", "japan");
+        keywords.put("Mitsubishi", "japan");
+        keywords.put("Shinkansen", "japan");
+        keywords.put("Honshu", "japan");
+        keywords.put("Shikoku", "japan");
+        keywords.put("Kyushu", "japan");
+        keywords.put("Ryukyu", "japan");
+        keywords.put("Fuji", "japan");
+        keywords.put("Fujiyama", "japan");
+        keywords.put("Pacific", "japan");
+        keywords.put("Tsushima", "japan");
+        keywords.put("Seto", "japan");
+        keywords.put("Izu", "japan");
+        keywords.put("Amami", "japan");
+        keywords.put("Bonin", "japan");
+        keywords.put("Sakhalin", "japan");
+        keywords.put("Kuril", "japan");
+        keywords.put("Nikkei", "japan");
+        keywords.put("Keiretsu", "japan");
+        keywords.put("Mitsui", "japan");
+        keywords.put("UFJ", "japan");
+        keywords.put("MFG", "japan");
+        keywords.put("SMFG", "japan");
+        keywords.put("Hitachi", "japan");
+        keywords.put("Panasonic", "japan");
+        keywords.put("Toshiba", "japan");
+        keywords.put("Nissan", "japan");
+
+//        canada
+        keywords.put("Maple", "canada");
+        keywords.put("maple", "canada");
+        keywords.put("Toronto", "canada");
+        keywords.put("Vancouver", "canada");
+        keywords.put("Ottawa", "canada");
+        keywords.put("Calgary", "canada");
+        keywords.put("Edmonton", "canada");
+        keywords.put("Quebec", "canada");
+        keywords.put("Alberta", "canada");
+        keywords.put("Ontario", "canada");
+        keywords.put("Manitoba", "canada");
+        keywords.put("Saskatchewan", "canada");
+        keywords.put("Nunavut", "canada");
+        keywords.put("TSE", "canada");
+        keywords.put("Tim Hortons", "canada");
+        keywords.put("Hockey", "canada");
+        keywords.put("Banff", "canada");
+        keywords.put("Brunswick", "canada");
+        keywords.put("Nova", "canada");
+        keywords.put("Edward", "canada");
+        keywords.put("Newfoundland", "canada");
+        keywords.put("labrador", "canada");
+        keywords.put("Superior", "canada");
+        keywords.put("Huron", "canada");
+        keywords.put("Erie", "canada");
+        keywords.put("Hudson", "canada");
+        keywords.put("TSX", "canada");
+        keywords.put("S&P/TSX", "canada");
+        keywords.put("RBC", "canada");
+        keywords.put("Toronto-Dominion", "canada");
+        keywords.put("Dominion", "canada");
+        keywords.put("Scotiabank", "canada");
+        keywords.put("Bombardier.", "canada");
+        keywords.put("BCE.", "canada");
+        keywords.put("Telus", "canada");
+        keywords.put("Rogers", "canada");
+        keywords.put("CBC", "canada");
+        keywords.put("TransCanada", "canada");
+        keywords.put("Enbridge", "canada");
+        keywords.put("Suncor", "canada");
+        keywords.put("Imperial", "canada");
+        keywords.put("Husky", "canada");
+
+//        west-germany
+        keywords.put("Vorpommern", "west-germany");
+        keywords.put("Mecklenburg-Vorpommern", "west-germany");
+        keywords.put("Mecklenburg", "west-germany");
+        keywords.put("Rhine-Westphalia", "west-germany");
+        keywords.put("Rhineland-Palatinate", "west-germany");
+        keywords.put("Saarland", "west-germany");
+        keywords.put("Saxony-Anhalt", "west-germany");
+        keywords.put("Anhalt", "west-germany");
+        keywords.put("Schleswig-Holstein", "west-germany");
+        keywords.put("Thuringia", "west-germany");
+        keywords.put("Bonn", "west-germany");
+        keywords.put("Elbe", "west-germany");
+        keywords.put("Baltic", "west-germany");
+        keywords.put("FRG", "west-germany");
+        keywords.put("Berlin", "west-germany");
+        keywords.put("East Germany", "west-germany");
+        keywords.put("Stasi", "west-germany");
+        keywords.put("Wall", "west-germany");
+        keywords.put("Reunification", "west-germany");
+        keywords.put("Pact", "west-germany");
+        keywords.put("Adenauer", "west-germany");
+        keywords.put("Brandt", "west-germany");
+        keywords.put("Schmidt", "west-germany");
+        keywords.put("Kohl", "west-germany");
+        keywords.put("Oktoberfest", "west-germany");
+        keywords.put("Beer", "west-germany");
+        keywords.put("Bratwurst", "west-germany");
+        keywords.put("Sauerkraut", "west-germany");
+        keywords.put("Dirndl", "west-germany");
+        keywords.put("Lederhosen", "west-germany");
+        keywords.put("Biergarten", "west-germany");
+        keywords.put("Autobahn", "west-germany");
+        keywords.put("Currywurst", "west-germany");
+        keywords.put("Wurst", "west-germany");
+        keywords.put("Volkswagen", "west-germany");
+        keywords.put("Beethoven", "west-germany");
+        keywords.put("Bach", "west-germany");
+        keywords.put("Goethe", "west-germany");
+        keywords.put("Schiller", "west-germany");
+        keywords.put("Wagner", "west-germany");
+        keywords.put("Gutenberg", "west-germany");
+        keywords.put("DM", "west-germany");
+        keywords.put("Bundesbank", "west-germany");
+        keywords.put("DAX", "west-germany");
+        keywords.put("Bayer", "west-germany");
+        keywords.put("Siemens", "west-germany");
+        keywords.put("BASF", "west-germany");
+        keywords.put("Thyssenkrupp", "west-germany");
+        keywords.put("Allianz", "west-germany");
+        keywords.put("Lufthansa", "west-germany");
+        keywords.put("Daimler-Benz", "west-germany");
+        keywords.put("Adidas", "west-germany");
+
+//        france
+        keywords.put("PSE", "france");
+        keywords.put("CAC", "france");
+        keywords.put("Société", "france");
+        keywords.put("Générale", "france");
+        keywords.put("BNP", "france");
+        keywords.put("Crédit", "france");
+        keywords.put("Total SE", "france");
+        keywords.put("Engie", "france");
+        keywords.put("Oréal", "france");
+        keywords.put("Dassault", "france");
+        keywords.put("Carrefour", "france");
+        keywords.put("Schneider", "france");
+        keywords.put("Thales", "france");
+        keywords.put("Veolia", "france");
+        keywords.put("Vinci ", "france");
+        keywords.put("Louvre", "france");
+        keywords.put("Versailles", "france");
+        keywords.put("Champs-Élysées", "france");
+        keywords.put("Triomphe", "france");
+        keywords.put("Montmartre", "france");
+        keywords.put("Notre-Dame", "france");
+        keywords.put("Bastille", "france");
+        keywords.put("Seine", "france");
+        keywords.put("Fraternity", "france");
+        keywords.put("Croissant", "france");
+        keywords.put("Baguette", "france");
+        keywords.put("Wine", "france");
+        keywords.put("Cheese", "france");
+        keywords.put("Cuisine", "france");
+        keywords.put("Fashion", "france");
+        keywords.put("Haute", "france");
+        keywords.put("Impressionism", "france");
+        keywords.put("Musique", "france");
+        keywords.put("Fête", "france");
+        keywords.put("Tour", "france");
+        keywords.put("Chanel", "france");
+        keywords.put("Dior", "france");
+        keywords.put("Yves Saint Laurent", "france");
+        keywords.put("d'Orsay", "france");
+        keywords.put("Pompidou", "france");
+        keywords.put("Cannes", "france");
+        keywords.put("Eiffel", "france");
+        keywords.put("Eurozone", "france");
+        keywords.put("Renault", "france");
+        keywords.put("Peugeot", "france");
+        keywords.put("Airbus", "france");
+        keywords.put("Total", "france");
+        keywords.put("L'Oréal", "france");
+        keywords.put("AXA", "france");
+        keywords.put("Sanofi", "france");
+        keywords.put("LVMH", "france");
+        keywords.put("Danone", "france");
+
+    }
+
+}
+/*
     private void createKeyWordsDictionary(){
 
 //        usa
         keywords.put("USA", "usa");
         keywords.put("US", "usa");
+        keywords.put("U.S", "usa");
         keywords.put("States", "usa");
         keywords.put("America", "usa");
         keywords.put("states", "usa");
@@ -517,7 +902,7 @@ public class DictionariesCreator {
         keywords.put("Oklahoma", "usa");
         keywords.put("Oregon", "usa");
         keywords.put("Pennsylvania", "usa");
-        keywords.put("Rhode Island", "usa");
+        keywords.put("Rhode", "usa");
         keywords.put("Carolina", "usa");
         keywords.put("Dakota", "usa");
         keywords.put("Tennessee", "usa");
@@ -529,24 +914,16 @@ public class DictionariesCreator {
         keywords.put("Wisconsin", "usa");
         keywords.put("Wyoming", "usa");
         keywords.put("Hollywood", "usa");
-//        usaKeywords.put("Los Angeles", "usa");
         keywords.put("Angeles", "usa");
         keywords.put("Vegas", "usa");
-//        usaKeywords.put("Las Vegas", "usa");
-//        usaKeywords.put("Grand Canyon", "usa");
+        keywords.put("Canyon", "usa");
         keywords.put("Yellowstone", "usa");
         keywords.put("Rushmore", "usa");
         keywords.put("Niagara", "usa");
-//        usaKeywords.put("Rocky Mountains", "usa");
-//        usaKeywords.put("The White House", "usa");
-//        usaKeywords.put("Statue of Liberty", "usa");
-//        usaKeywords.put("Golden Gate Bridge", "usa");
-//        usaKeywords.put("Great Lakes", "usa");
+        keywords.put("Liberty", "usa");
         keywords.put("Everglades", "usa");
-//        usaKeywords.put("Wall Street", "usa");
         keywords.put("NYSE", "usa");
         keywords.put("NASDAQ", "usa");
-//        usaKeywords.put("Federal Reserve", "usa");
         keywords.put("IRS", "usa");
         keywords.put("S&P", "usa");
         keywords.put("Treasury", "usa");
@@ -613,7 +990,6 @@ public class DictionariesCreator {
         keywords.put("Honda", "japan");
         keywords.put("Mitsubishi", "japan");
         keywords.put("Shinkansen", "japan");
-        keywords.put("Bullet Train", "japan");
         keywords.put("Hokkaido", "japan");
         keywords.put("Honshu", "japan");
         keywords.put("Shikoku", "japan");
@@ -621,11 +997,7 @@ public class DictionariesCreator {
         keywords.put("Ryukyu", "japan");
         keywords.put("Fuji", "japan");
         keywords.put("Fujiyama", "japan");
-        keywords.put("Japanese Alps", "japan");
-        keywords.put("Pacific Ocean", "japan");
-        keywords.put("East China Sea", "japan");
-        keywords.put("Sea of Japan", "japan");
-        keywords.put("Japan Sea", "japan");
+        keywords.put("Pacific", "japan");
         keywords.put("Tsushima", "japan");
         keywords.put("Seto", "japan");
         keywords.put("Izu", "japan");
@@ -650,7 +1022,8 @@ public class DictionariesCreator {
 //        canada
         keywords.put("Canada", "canada");
         keywords.put("Canadian", "canada");
-        keywords.put("Maple Leaf", "canada");
+        keywords.put("Maple", "canada");
+        keywords.put("maple", "canada");
         keywords.put("Toronto", "canada");
         keywords.put("Montreal", "canada");
         keywords.put("Vancouver", "canada");
@@ -664,15 +1037,11 @@ public class DictionariesCreator {
         keywords.put("Saskatchewan", "canada");
         keywords.put("Yukon", "canada");
         keywords.put("Nunavut", "canada");
-        keywords.put("Canadian Dollar", "canada");
-        keywords.put("CAD", "canada");
-        keywords.put("Bank of Canada", "canada");
-        keywords.put("Toronto Stock Exchange", "canada");
+        keywords.put("TSE", "canada");
         keywords.put("Tim Hortons", "canada");
         keywords.put("Hockey", "canada");
         keywords.put("Niagara Falls", "canada");
         keywords.put("Banff", "canada");
-        keywords.put("O Canada", "canada");
         keywords.put("Columbia", "canada");
         keywords.put("Brunswick", "canada");
         keywords.put("Nova", "canada");
@@ -680,19 +1049,16 @@ public class DictionariesCreator {
         keywords.put("Newfoundland", "canada");
         keywords.put("labrador", "canada");
         keywords.put("Canadian Shield", "canada");
-        keywords.put("Great Lakes", "canada");
-        keywords.put("Lake Superior", "canada");
-        keywords.put("Lake Michigan", "canada");
-        keywords.put("Lake Huron", "canada");
-        keywords.put("Lake Erie", "canada");
-        keywords.put("Lake Ontario", "canada");
+        keywords.put("Superior", "canada");
+        keywords.put("Huron", "canada");
+        keywords.put("Erie", "canada");
         keywords.put("Hudson Bay", "canada");
         keywords.put("TSX", "canada");
         keywords.put("S&P/TSX Composite Index", "canada");
         keywords.put("Canadian Imperial Bank of Commerce", "canada");
         keywords.put("Royal Bank of Canada", "canada");
-        keywords.put("Toronto-Dominion Bank", "canada");
-        keywords.put("Bank of Montreal", "canada");
+        keywords.put("Toronto-Dominion", "canada");
+        keywords.put("Dominion", "canada");
         keywords.put("Scotiabank", "canada");
         keywords.put("Bombardier.", "canada");
         keywords.put("BCE.", "canada");
@@ -709,13 +1075,17 @@ public class DictionariesCreator {
         keywords.put("Germany", "west-germany");
         keywords.put("German", "west-germany");
         keywords.put("Baden-Württemberg", "west-germany");
+        keywords.put("Württemberg", "west-germany");
+        keywords.put("Baden", "west-germany");
         keywords.put("Bavaria", "west-germany");
         keywords.put("Brandenburg", "west-germany");
         keywords.put("Bremen", "west-germany");
         keywords.put("Hamburg", "west-germany");
         keywords.put("Hesse", "west-germany");
         keywords.put("Lower Saxony", "west-germany");
+        keywords.put("Vorpommern", "west-germany");
         keywords.put("Mecklenburg-Vorpommern", "west-germany");
+        keywords.put("Mecklenburg", "west-germany");
         keywords.put("Rhine-Westphalia", "west-germany");
         keywords.put("Rhineland-Palatinate", "west-germany");
         keywords.put("Saarland", "west-germany");
@@ -724,25 +1094,20 @@ public class DictionariesCreator {
         keywords.put("Schleswig-Holstein", "west-germany");
         keywords.put("Thuringia", "west-germany");
         keywords.put("Bonn", "west-germany");
-        keywords.put("North Rhine-Westphalia", "west-germany");
+        keywords.put("Westphalia", "west-germany");
         keywords.put("Rhineland", "west-germany");
         keywords.put("Palatinate", "west-germany");
-        keywords.put("Black Forest", "west-germany");
-        keywords.put("Rhine River", "west-germany");
-        keywords.put("Elbe River", "west-germany");
-        keywords.put("North Sea", "west-germany");
-        keywords.put("Baltic Sea", "west-germany");
-        keywords.put("West Germany", "west-germany");
-        keywords.put("Zachodnia Niemcy", "west-germany");
+        keywords.put("Rhine", "west-germany");
+        keywords.put("Elbe", "west-germany");
+        keywords.put("Baltic", "west-germany");
         keywords.put("FRG", "west-germany");
-        keywords.put("Bundesrepublik Deutschland", "west-germany");
+        keywords.put("Deutschland", "west-germany");
+        keywords.put("Bundesrepublik", "west-germany");
         keywords.put("Berlin", "west-germany");
         keywords.put("East Germany", "west-germany");
         keywords.put("Stasi", "west-germany");
         keywords.put("Berlin Wall", "west-germany");
-        keywords.put("Cold War", "west-germany");
         keywords.put("Reunification", "west-germany");
-        keywords.put("European Community", "west-germany");
         keywords.put("NATO", "west-germany");
         keywords.put("Warsaw Pact", "west-germany");
         keywords.put("Adenauer", "west-germany");
@@ -805,7 +1170,7 @@ public class DictionariesCreator {
         keywords.put("Montmartre", "france");
         keywords.put("Notre-Dame", "france");
         keywords.put("Bastille", "france");
-        keywords.put("La Seine", "france");
+        keywords.put("Seine", "france");
         keywords.put("Fraternity", "france");
         keywords.put("Croissant", "france");
         keywords.put("Baguette", "france");
@@ -859,3 +1224,4 @@ public class DictionariesCreator {
     }
 
 }
+*/
