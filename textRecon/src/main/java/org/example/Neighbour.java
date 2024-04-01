@@ -77,6 +77,9 @@ public class Neighbour {
                 nonCapitalWordCounter++;
             }
 
+//            TO DO:
+//            compare words witch keys in lowercase
+
             if(politiciansDictionary.containsKey(word)){
                 totalPoliticians++;
                 country = politiciansDictionary.get(word);
