@@ -13,7 +13,7 @@ public class DictionariesCreator {
     public DictionariesCreator() {
         createPoliticianDictionary();
         createCurrenciesDictionary();
-        createKeyWordsDictionary();
+//        createKeyWordsDictionary();
         createGeographyWordsDictionary();
     }
 

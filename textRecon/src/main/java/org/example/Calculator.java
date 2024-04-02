@@ -53,6 +53,9 @@ public class Calculator {
 
     public double niewiadomskiMethod(String s1, String s2) {
 
+        s1 = s1.toLowerCase();
+        s2 = s2.toLowerCase();
+
         double n1 = s1.length();
         double n2 = s2.length();
         double n = Math.max(n1, n2);

@@ -14,8 +14,8 @@ public class Article {
         this.content = content;
     }
 
-    public List<String> getPlaces() {
-        return places;
+    public ArrayList<String> getPlaces() {
+        return (ArrayList<String>) places;
     }
 
     public String getContent() {

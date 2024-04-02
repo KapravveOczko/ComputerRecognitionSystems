@@ -6,8 +6,8 @@ import static java.lang.Character.isUpperCase;
 
 public class Neighbour {
 
-    String country;
-    double[] vector;
+    List<String> wordsVector;
+    List<Double> vector;
 
     /*
 
@@ -16,47 +16,47 @@ public class Neighbour {
 
     #1 politiciansComponent
     #2 currencyComponent
-    #3 keyWordComponent
-    #4 geographyComponent
-    #5 number of capital letters words component
-    #6 number of non capital letters words component
-    #7 word number component
-    #8 number of words longer than 10 letters or equal 10 letters
-    #9 number of words shorter than 5 letters
-    #10 the longest word
+    #3 geographyComponent
+    #4 number of capital letters words component
+    #5 number of non capital letters words component
+    #6 word number component
+    #7 number of words longer than 10 letters or equal 10 letters
+    #8 number of words shorter than 5 letters
+    #9 the longest word
+    #10 words containing "-"
 
     first 3 are counted as x = (highestCountryScore / totalScore)
     */
 
     public void createNeighbourVector( Map<String,String> politiciansDictionary,
                                        Map<String,String> currenciesDictionary ,
-                                       Map<String,String> keyWordsDictionary,
                                        Map<String,String> geographyDictionary,
                                        List<String> wordsList){
 
-        int wordCounter = wordsList.size(); //7
-        int longWordCounter = 0;    //8
-        int shortWordCounter = 0;   //9
-        int capitalWordCounter = 0; //5
-        int nonCapitalWordCounter = 0; //6
-        int longestWord = 0; //10
+        String country;
+
+        int wordCounter = wordsList.size(); //6
+        int longWordCounter = 0;    //7
+        int shortWordCounter = 0;   //8
+        int capitalWordCounter = 0; //4
+        int nonCapitalWordCounter = 0; //5
+        int longestWord = 0; //9
+        int wordsWithHyphen = 0; //10
 
         int totalPoliticians = 0;   //1
         int totalCurrencies = 0;    //2
-        int totalKeyWords = 0;  //3
         int totalGeography = 0; //4
 
 //        cc == country counter
         Map<String, Integer> politiciansCC = createFilledMap();
         Map<String, Integer> currenciesCC = createFilledMap();
-        Map<String, Integer> keyWordsCC = createFilledMap();
         Map<String, Integer> geographyCC = createFilledMap();
 
         for (String word: wordsList){
 
             if (word == null){
                 continue;
-            } else if (word == "") {
+            } else if (word.isEmpty()) {
                 continue;
             }
 
@@ -76,6 +76,9 @@ public class Neighbour {
             else {
                 nonCapitalWordCounter++;
             }
+            if (word.contains("-")){
+                wordsWithHyphen ++;
+            }
 
 //            TO DO:
 //            compare words witch keys in lowercase
@@ -90,11 +93,6 @@ public class Neighbour {
                 country = currenciesDictionary.get(word);
                 currenciesCC.replace(country, currenciesCC.get(country) + 1);
             }
-            if(keyWordsDictionary.containsKey(word)){
-                totalKeyWords++;
-                country = keyWordsDictionary.get(word);
-                keyWordsCC.replace(country, keyWordsCC.get(country) + 1);
-            }
             if(geographyDictionary.containsKey(word)){
                 totalGeography++;
                 country = geographyDictionary.get(word);
@@ -102,32 +100,55 @@ public class Neighbour {
             }
         }
 
-        double[] vector = new double[10];
-        vector[0] = (double) getHighestCCValue(politiciansCC) / totalPoliticians;
-        vector[1] = (double) getHighestCCValue(currenciesCC) / totalCurrencies;
-        vector[2] = (double) getHighestCCValue(keyWordsCC) / totalKeyWords;
-        vector[3] = (double) getHighestCCValue(geographyCC) / totalGeography;
-        vector[4] = capitalWordCounter;
-        vector[5] = nonCapitalWordCounter;
-        vector[6] = wordCounter;
-        vector[7] = longWordCounter;
-        vector[8] = shortWordCounter;
-        vector[9] = longestWord;
+//        vector[0] = (double) getHighestCCValue(politiciansCC) / totalPoliticians;
+//        vector[1] = (double) getHighestCCValue(currenciesCC) / totalCurrencies;
+//        vector[3] = (double) getHighestCCValue(geographyCC) / totalGeography;
+
+        List<Double> vector = new ArrayList<>();
+        vector.add((double) capitalWordCounter);
+        vector.add((double) nonCapitalWordCounter);
+        vector.add((double) wordCounter);
+        vector.add((double) longWordCounter);
+        vector.add((double) shortWordCounter);
+        vector.add((double) longestWord);
+        vector.add((double) wordsWithHyphen);
+
+        List<String> wordVector = new ArrayList<>();
+        wordVector.add(getHighestCCValue(politiciansCC));
+        wordVector.add(getHighestCCValue(currenciesCC));
+        wordVector.add(getHighestCCValue(geographyCC));
 
         this.vector = vector;
+        this.wordsVector = wordVector;
     }
 
-    public int getHighestCCValue(Map<String, Integer> ccMap){
+
+//    public int getHighestCCValue(Map<String, Integer> ccMap){
+//
+//        int highest = 0;
+//        Set<String> ccCountry = ccMap.keySet();
+//        for(String cc: ccCountry){
+//            if(ccMap.get(cc) > highest){
+//                highest = ccMap.get(cc);
+//            }
+//        }
+//
+//        return highest;
+//    }
+
+    public String getHighestCCValue(Map<String, Integer> ccMap){
 
         int highest = 0;
+        String country = "";
         Set<String> ccCountry = ccMap.keySet();
         for(String cc: ccCountry){
             if(ccMap.get(cc) > highest){
                 highest = ccMap.get(cc);
+                country = cc;
             }
         }
 
-        return highest;
+        return country;
     }
 
     public static Map<String, Integer> createFilledMap() {
@@ -141,5 +162,22 @@ public class Neighbour {
         return map;
     }
 
+    public void showVector(){
+        System.out.println("Vector: ");
+        for (String wv : this.wordsVector) {
+            System.out.print(wv + ", ");
+        }
+        for (double v : this.vector) {
+            System.out.print(v + ", ");
+        }
+        System.out.println();
+    }
 
+    public ArrayList<String> getWordsVector() {
+        return (ArrayList<String>) wordsVector;
+    }
+
+    public ArrayList<Double> getVector() {
+        return (ArrayList<Double>) vector;
+    }
 }
