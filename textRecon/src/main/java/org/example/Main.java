@@ -1,26 +1,24 @@
 package org.example;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
 
-//        creating dicts
         DictionariesCreator dictionaries = new DictionariesCreator();
         SgmConverter converter = new SgmConverter();
         JsonConverter jsonConverter = new JsonConverter();
 
-        converter.fillArticleList("test2");
+        converter.fillArticleList("reut2-013");
+//        converter.getArticlesFromData();
         List<Article> articlesInUse = converter.getArticleList();
 
         for (Article article: articlesInUse){
             System.out.println(article.cleanUpWordsList(article.getWordsList()));
-            Neighbour neigh = new Neighbour();
+            VectorCreator neigh = new VectorCreator();
             neigh.createNeighbourVector(dictionaries.getPoliticians(), dictionaries.getCurrencies(), dictionaries.getGeography(), article.getWordsList());
             neigh.showVector();
-            JsonConverter.appendDataToJson("allVectors.json", neigh.getVector(), neigh.getWordsVector(), article.getPlaces());
+            JsonConverter.appendDataToJson("testVectors.json", neigh.getVector(), neigh.getWordsVector(), article.getPlaces());
         }
 
 

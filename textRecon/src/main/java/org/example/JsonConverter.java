@@ -7,9 +7,9 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 public class JsonConverter {
 
-    // Funkcja do dopisywania danych do pliku JSON
+    // data to json
     public static void appendDataToJson(String fileName, ArrayList<Double> vector, ArrayList<String> wordVector, ArrayList<String> places) {
-        // Sprawdzenie istnienia pliku
+        // checking for file
         File file = new File(fileName);
         if (!file.exists()) {
             try {
@@ -22,15 +22,15 @@ public class JsonConverter {
         // Wczytanie danych z pliku JSON do ArrayList
         ArrayList<DataObject> dataObjects = loadDataFromJson(fileName);
 
-        // Dodanie nowego obiektu do ArrayList
+        // adding data to ArrayList
         DataObject newData = new DataObject(vector, wordVector, places);
         dataObjects.add(newData);
 
-        // Konwersja ArrayList na JSON
+        // ArrayList to JSON
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String json = gson.toJson(dataObjects);
 
-        // Zapisywanie danych do pliku JSON
+        // saving to json
         try (FileWriter writer = new FileWriter(fileName)) {
             writer.write(json);
         } catch (IOException e) {
@@ -38,16 +38,20 @@ public class JsonConverter {
         }
     }
 
-    // z JSONa do ArrayList
+    // from json to arraylist
     public static ArrayList<DataObject> loadDataFromJson(String fileName) {
         ArrayList<DataObject> dataObjects = new ArrayList<>();
         try (Reader reader = new FileReader(fileName)) {
             Type type = new TypeToken<ArrayList<DataObject>>() {}.getType();
             Gson gson = new Gson();
             dataObjects = gson.fromJson(reader, type);
+            if (dataObjects == null) {
+                dataObjects = new ArrayList<>(); // if list == null, creating new list
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
         return dataObjects;
     }
+
 }

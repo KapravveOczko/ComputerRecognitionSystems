@@ -101,6 +101,7 @@ public class SgmConverter {
             else{
                 currFileName = fileName + i;
             }
+            System.out.println("converting: " + currFileName);
             fillArticleList(currFileName);
         }
     }

@@ -4,7 +4,7 @@ import java.util.*;
 
 import static java.lang.Character.isUpperCase;
 
-public class Neighbour {
+public class VectorCreator {
 
     List<String> wordsVector;
     List<Double> vector;
