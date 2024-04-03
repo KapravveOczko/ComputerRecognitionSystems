@@ -10,7 +10,7 @@ public class Calculator {
         double ans = 0.0;
 
         for (Double aDouble : wordComp) {
-            ans += (1 - aDouble);
+            ans += (1.0 - aDouble);
         }
         for (int i = 0; i < v1.size(); i++){
             ans += Math.pow((v1.get(i) - v2.get(i)), 2);
@@ -57,11 +57,15 @@ public class Calculator {
         s1 = s1.toLowerCase();
         s2 = s2.toLowerCase();
 
-        double n1 = s1.length();
-        double n2 = s2.length();
-        double n = Math.max(n1, n2);
+        int n1 = s1.length();
+        int n2 = s2.length();
+        int n = Math.max(n1, n2);
         double n1n2Result = 0.0;
         double n2n1Result = 0.0;
+
+        if(n == 0){
+            return 0.0;
+        }
 
         for (int i = 1; i < n1; i++) {
             for (int j = 0; j < (n1 - i + 1); j++) {
@@ -93,6 +97,7 @@ public class Calculator {
         ArrayList<Double> wordComp = new ArrayList<>();
         for(int i=0; i<v1.size(); i++){
             wordComp.add(niewiadomskiMethod(v1.get(i), v2.get(i)));
+//            System.out.println("nMetod: for " + " v1.get(i): " + v1.get(i) + " v2.get(i): " + v2.get(i) + " metod " + niewiadomskiMethod(v1.get(i), v2.get(i)));
         }
 
         return wordComp;

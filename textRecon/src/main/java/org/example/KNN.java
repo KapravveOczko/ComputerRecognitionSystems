@@ -20,14 +20,8 @@ public class KNN {
         public ArrayList<String> getPlaces() {
             return places;
         }
-        public void setPlaces(ArrayList<String> places) {
-            this.places = places;
-        }
         public Double getDistance() {
             return distance;
-        }
-        public void setDistance(Double distance) {
-            this.distance = distance;
         }
     }
 
@@ -38,26 +32,20 @@ public class KNN {
             ArrayList<Neighbour> neighbours = new ArrayList<>();
             for (DataObject ld : learningData) {
                 Double distance = this.calculator.euclideanMetrics(td.getVector(), ld.getVector(), calculator.createWordComp(td.getWordVector(), ld.getWordVector()));
-
-                // Sprawdzenie, czy odległość nie jest NaN
-                if (!Double.isNaN(distance)) {
-                    neighbours.add(new Neighbour(ld.getPlaces(), distance));
-                }
-
+                System.out.println(distance);
+                neighbours.add(new Neighbour(ld.getPlaces(), distance));
             }
 
             // sorting neighbours
             Collections.sort(neighbours, Comparator.comparing(Neighbour::getDistance));
-            List<Neighbour> kNearestNeighbours = neighbours.subList(0, Math.min(k, neighbours.size()));
+            List<Neighbour> kNearestNeighbours = neighbours.subList(0, Math.min((k - 1), neighbours.size()));
 
-//            // checking neighbours
+            // checking neighbours
 //            for (Neighbour neighbour : kNearestNeighbours) {
 //                System.out.println("country distance " + neighbour.getPlaces() + " | " + neighbour.getDistance());
 //            }
 //            System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-//
-//
-            System.out.println(getResult(kNearestNeighbours));
+//            System.out.println("wynik " + getResult(kNearestNeighbours));
 
             results.put(td,getResult(kNearestNeighbours));
         }

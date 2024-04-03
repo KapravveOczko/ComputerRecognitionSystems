@@ -1,7 +1,10 @@
 package org.example;
 
+import org.example.vectorCreating.DictionariesCreator;
+import org.example.vectorCreating.JsonConverter;
+import org.example.vectorCreating.SgmConverter;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -40,14 +43,13 @@ public class Main {
         testLearningVectors = JsonConverter.loadDataFromJson("testLearningVectors.json");
         testTestVectors = JsonConverter.loadDataFromJson("testTestVectors.json");
 
-//        knn.showResults(knn.knn(testLearningVectors, testTestVectors, 10));
         knn.knn(testLearningVectors, testTestVectors, 10);
 
 //        =========================================================================
 
 //        System.out.println("KURWA");
 //        Calculator calc = new Calculator();
-//        System.out.println(calc.niewiadomskiMethod("","kot"));
+//        System.out.println(calc.niewiadomskiMethod("",""));
 //        System.out.println(calc.niewiadomskiMethod("kot","kotek"));
 
 //        =========================================================================
