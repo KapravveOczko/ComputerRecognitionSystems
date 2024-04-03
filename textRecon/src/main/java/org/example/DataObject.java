@@ -14,4 +14,15 @@ public class DataObject {
         this.places = places;
     }
 
+    public ArrayList<Double> getVector() {
+        return vector;
+    }
+
+    public ArrayList<String> getWordVector() {
+        return wordVector;
+    }
+
+    public ArrayList<String> getPlaces() {
+        return places;
+    }
 }

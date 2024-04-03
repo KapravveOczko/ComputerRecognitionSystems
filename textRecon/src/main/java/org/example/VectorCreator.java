@@ -6,8 +6,8 @@ import static java.lang.Character.isUpperCase;
 
 public class VectorCreator {
 
-    List<String> wordsVector;
-    List<Double> vector;
+    ArrayList<String> wordsVector;
+    ArrayList<Double> vector;
 
     /*
 
@@ -104,7 +104,7 @@ public class VectorCreator {
 //        vector[1] = (double) getHighestCCValue(currenciesCC) / totalCurrencies;
 //        vector[3] = (double) getHighestCCValue(geographyCC) / totalGeography;
 
-        List<Double> vector = new ArrayList<>();
+        ArrayList<Double> vector = new ArrayList<>();
         vector.add((double) capitalWordCounter);
         vector.add((double) nonCapitalWordCounter);
         vector.add((double) wordCounter);
@@ -113,7 +113,7 @@ public class VectorCreator {
         vector.add((double) longestWord);
         vector.add((double) wordsWithHyphen);
 
-        List<String> wordVector = new ArrayList<>();
+        ArrayList<String> wordVector = new ArrayList<>();
         wordVector.add(getHighestCCValue(politiciansCC));
         wordVector.add(getHighestCCValue(currenciesCC));
         wordVector.add(getHighestCCValue(geographyCC));
@@ -174,10 +174,10 @@ public class VectorCreator {
     }
 
     public ArrayList<String> getWordsVector() {
-        return (ArrayList<String>) wordsVector;
+        return wordsVector;
     }
 
     public ArrayList<Double> getVector() {
-        return (ArrayList<Double>) vector;
+        return vector;
     }
 }

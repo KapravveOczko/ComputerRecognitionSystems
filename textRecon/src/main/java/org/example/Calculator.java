@@ -1,10 +1,11 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
 
-    public double euclideanMetrics(List<Double> v1, List<Double> v2, List<Double> wordComp) {
+    public double euclideanMetrics(ArrayList<Double> v1, ArrayList<Double> v2, ArrayList<Double> wordComp) {
 
         double ans = 0.0;
 
@@ -18,7 +19,7 @@ public class Calculator {
         return Math.sqrt(ans);
     }
 
-    public double streetMetrics(List<Double> v1, List<Double> v2, List<Double> wordComp) {
+    public double streetMetrics(ArrayList<Double> v1, ArrayList<Double> v2, ArrayList<Double> wordComp) {
 
         double ans = 0.0;
 
@@ -32,7 +33,7 @@ public class Calculator {
         return ans;
     }
 
-    public double czebyszewMetrics(List<Double> v1, List<Double> v2, List<Double> wordComp) {
+    public double czebyszewMetrics(ArrayList<Double> v1, ArrayList<Double> v2, ArrayList<Double> wordComp) {
         double ans = 0.0;
 
         for (Double value : wordComp) {
@@ -85,5 +86,15 @@ public class Calculator {
         }
 
         return (2.0 / (n * n + n)) * (Math.min(n1n2Result, n2n1Result));
+    }
+
+    public ArrayList<Double> createWordComp(ArrayList<String> v1, ArrayList<String> v2){
+
+        ArrayList<Double> wordComp = new ArrayList<>();
+        for(int i=0; i<v1.size(); i++){
+            wordComp.add(niewiadomskiMethod(v1.get(i), v2.get(i)));
+        }
+
+        return wordComp;
     }
 }
