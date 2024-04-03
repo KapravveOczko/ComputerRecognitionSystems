@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -8,8 +9,15 @@ public class Main {
         DictionariesCreator dictionaries = new DictionariesCreator();
         SgmConverter converter = new SgmConverter();
         JsonConverter jsonConverter = new JsonConverter();
+        KNN knn = new KNN();
 
-        converter.fillArticleList("reut2-013");
+//        =========================================================================
+
+//        saving articles to json
+
+
+/*
+        converter.fillArticleList("test3");
 //        converter.getArticlesFromData();
         List<Article> articlesInUse = converter.getArticleList();
 
@@ -18,10 +26,22 @@ public class Main {
             VectorCreator neigh = new VectorCreator();
             neigh.createNeighbourVector(dictionaries.getPoliticians(), dictionaries.getCurrencies(), dictionaries.getGeography(), article.getWordsList());
             neigh.showVector();
-            JsonConverter.appendDataToJson("testVectors.json", neigh.getVector(), neigh.getWordsVector(), article.getPlaces());
+            JsonConverter.appendDataToJson("testTestVectors.json", neigh.getVector(), neigh.getWordsVector(), article.getPlaces());
         }
+*/
 
+//        =========================================================================
 
+//        KNN TEST
+
+        ArrayList<DataObject> testTestVectors = new ArrayList<>();
+        ArrayList<DataObject> testLearningVectors = new ArrayList<>();
+
+        testLearningVectors = JsonConverter.loadDataFromJson("testLearningVectors.json");
+        testTestVectors = JsonConverter.loadDataFromJson("testTestVectors.json");
+
+//        knn.showResults(knn.knn(testLearningVectors, testTestVectors, 10));
+        knn.knn(testLearningVectors, testTestVectors, 10);
 
 //        =========================================================================
 

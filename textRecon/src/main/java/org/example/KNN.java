@@ -2,61 +2,112 @@ package org.example;
 
 import java.util.*;
 
+import static java.lang.Double.NaN;
+
 public class KNN {
 
     Calculator calculator = new Calculator();
 
-//    we need it to pass method to knn
-    public interface MetricsFunction {
-        double calculateDistance(ArrayList<Double> v1, ArrayList<Double> v2, ArrayList<Double> wordComp);
+    public static class Neighbour {
+        private ArrayList<String> places;
+        private Double distance;
+
+        public Neighbour(ArrayList<String> places, Double distance) {
+            this.places = places;
+            this.distance = distance;
+        }
+
+        public ArrayList<String> getPlaces() {
+            return places;
+        }
+        public void setPlaces(ArrayList<String> places) {
+            this.places = places;
+        }
+        public Double getDistance() {
+            return distance;
+        }
+        public void setDistance(Double distance) {
+            this.distance = distance;
+        }
     }
 
-    public Map<DataObject, String> knn(List<DataObject> learningData, List<DataObject> testData, int k, MetricsFunction metricsFunction) {
+    public Map<DataObject, String> knn(List<DataObject> learningData, List<DataObject> testData, int k) {
         Map<DataObject, String> results = new HashMap<>();
 
         for (DataObject td : testData) {
-            Map<String, Double> neighbors = new HashMap<>();
+            ArrayList<Neighbour> neighbours = new ArrayList<>();
             for (DataObject ld : learningData) {
-                Double distance = metricsFunction.calculateDistance(td.getVector(), ld.getVector(), calculator.createWordComp(td.getWordVector(), ld.getWordVector()));
-                for (String s : ld.getPlaces()) {
-                    neighbors.put(s, distance);
+                Double distance = this.calculator.euclideanMetrics(td.getVector(), ld.getVector(), calculator.createWordComp(td.getWordVector(), ld.getWordVector()));
+
+                // Sprawdzenie, czy odległość nie jest NaN
+                if (!Double.isNaN(distance)) {
+                    neighbours.add(new Neighbour(ld.getPlaces(), distance));
                 }
+
             }
 
-            // sorting neighbour by distance
-            List<Map.Entry<String, Double>> sortedNeighbors = new ArrayList<>(neighbors.entrySet());
-            sortedNeighbors.sort(Map.Entry.comparingByValue());
+            // sorting neighbours
+            Collections.sort(neighbours, Comparator.comparing(Neighbour::getDistance));
+            List<Neighbour> kNearestNeighbours = neighbours.subList(0, Math.min(k, neighbours.size()));
 
-            // choosing k nearest neighbours
-            Map<String, Double> kNearestNeighbors = new LinkedHashMap<>();
-            for (int i = 0; i < Math.min(k, sortedNeighbors.size()); i++) {
-                Map.Entry<String, Double> entry = sortedNeighbors.get(i);
-                kNearestNeighbors.put(entry.getKey(), entry.getValue());
-            }
+//            // checking neighbours
+//            for (Neighbour neighbour : kNearestNeighbours) {
+//                System.out.println("country distance " + neighbour.getPlaces() + " | " + neighbour.getDistance());
+//            }
+//            System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+//
+//
+            System.out.println(getResult(kNearestNeighbours));
 
-            // counting countries among k nearest
-            Map<String, Integer> countryCounts = new HashMap<>();
-            for (Map.Entry<String, Double> entry : kNearestNeighbors.entrySet()) {
-                String country = entry.getKey();
-                countryCounts.put(country, countryCounts.getOrDefault(country, 0) + 1);
-            }
-
-            // choosing most popular country
-            String mostFrequentCountry = "";
-            int maxCount = 0;
-            for (Map.Entry<String, Integer> entry : countryCounts.entrySet()) {
-                if (entry.getValue() > maxCount) {
-                    mostFrequentCountry = entry.getKey();
-                    maxCount = entry.getValue();
-                }
-            }
-
-            // creating map <dataObject, string> where string ist most popular country
-            results.put(td, mostFrequentCountry);
+            results.put(td,getResult(kNearestNeighbours));
         }
-
         return results;
     }
 
+
+    public String getResult(List<Neighbour> kNearestNeighbors) {
+        Map<String, Integer> countryScore = new HashMap<>();
+        countryScore.put("canada", 0);
+        countryScore.put("japan", 0);
+        countryScore.put("west-germany", 0);
+        countryScore.put("uk", 0);
+        countryScore.put("france", 0);
+        countryScore.put("usa", 0);
+
+        for (Neighbour neighbour : kNearestNeighbors) {
+            for (String place : neighbour.getPlaces()) {
+                countryScore.put(place, countryScore.getOrDefault(place, 0) + 1);
+            }
+        }
+
+        String maxCountry = "";
+        int maxScore = 0;
+        for (Map.Entry<String, Integer> entry : countryScore.entrySet()) {
+            if (entry.getValue() > maxScore) {
+                maxCountry = entry.getKey();
+                maxScore = entry.getValue();
+            }
+        }
+
+        showCountCountries(countryScore);
+
+        return maxCountry;
+    }
+
+    public void showResults(Map<DataObject, String> result){
+        for (Map.Entry<DataObject, String> entry : result.entrySet()){
+            System.out.println("powinno być:");
+            System.out.println(entry.getKey().getPlaces());
+            System.out.println("a jest:");
+            System.out.println(entry.getValue());
+        }
+    }
+
+    public void showCountCountries(Map<String, Integer> countryCounts){
+        System.out.println("wyniki dla poszczególnych krajów:");
+        for(Map.Entry<String, Integer> entry: countryCounts.entrySet()){
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+    }
 
 }
