@@ -32,7 +32,7 @@ public class KNN {
             ArrayList<Neighbour> neighbours = new ArrayList<>();
             for (DataObject ld : learningData) {
                 Double distance = this.calculator.euclideanMetrics(td.getVector(), ld.getVector(), calculator.createWordComp(td.getWordVector(), ld.getWordVector()));
-                System.out.println(distance);
+//                System.out.println(distance);
                 neighbours.add(new Neighbour(ld.getPlaces(), distance));
             }
 
@@ -41,11 +41,12 @@ public class KNN {
             List<Neighbour> kNearestNeighbours = neighbours.subList(0, Math.min((k - 1), neighbours.size()));
 
             // checking neighbours
-//            for (Neighbour neighbour : kNearestNeighbours) {
-//                System.out.println("country distance " + neighbour.getPlaces() + " | " + neighbour.getDistance());
-//            }
-//            System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-//            System.out.println("wynik " + getResult(kNearestNeighbours));
+/*            for (Neighbour neighbour : kNearestNeighbours) {
+                System.out.println("country distance " + neighbour.getPlaces() + " | " + neighbour.getDistance());
+            }
+            System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+            System.out.println("wynik " + getResult(kNearestNeighbours));
+*/
 
             results.put(td,getResult(kNearestNeighbours));
         }

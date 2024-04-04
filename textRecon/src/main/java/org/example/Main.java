@@ -43,7 +43,9 @@ public class Main {
         testLearningVectors = JsonConverter.loadDataFromJson("testLearningVectors.json");
         testTestVectors = JsonConverter.loadDataFromJson("testTestVectors.json");
 
-        knn.knn(testLearningVectors, testTestVectors, 10);
+//        knn.knn(testLearningVectors, testTestVectors, 10);
+        qualityCalculator qualityCalculator = new qualityCalculator(knn.knn(testLearningVectors, testTestVectors, 10));
+        qualityCalculator.showQualities();
 
 //        =========================================================================
 
