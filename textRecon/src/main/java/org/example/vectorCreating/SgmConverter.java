@@ -32,7 +32,7 @@ public class SgmConverter {
         return placesList;
     }
 
-    void fillArticleList(String fileName){
+    public void fillArticleList(String fileName){
         File input = new File("data/" + fileName + ".sgm");
         List<Document> reutersDocuments = getFiles(input);
         for (Document doc: reutersDocuments) {

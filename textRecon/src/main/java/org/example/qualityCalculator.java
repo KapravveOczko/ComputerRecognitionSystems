@@ -74,20 +74,34 @@ public class qualityCalculator {
         List<Integer> resultList = new ArrayList<>();
 
         for (Map.Entry<DataObject, String> entry : results.entrySet()) {
+
+            System.out.println();
+            System.out.println("=================================");
+            System.out.println("znaleziony kraj: " + country);
+            System.out.println("prawdziwy krej/kraje:");
+            entry.getKey().showPlaces();
+            System.out.println();
+
+
+
             String predictedCountry = entry.getValue();
             List<String> actualCountries = entry.getKey().getPlaces();
 
             if (actualCountries.contains(country)) {
                 if (predictedCountry.equals(country)) {
                     tp++;
+                    System.out.println("dodane do tp");
                 } else {
                     fn++;
+                    System.out.println("dodane do fn");
                 }
             } else {
                 if (predictedCountry.equals(country)) {
                     fp++;
+                    System.out.println("dodane do fp");
                 } else {
                     tn++;
+                    System.out.println("dodane do tn");
                 }
             }
         }
@@ -140,7 +154,7 @@ public class qualityCalculator {
 
         results.put("precisionC", precisionC(tpSum, precisionSum));
         results.put("recallC", recallC(tpSum, recallSum));
-        results.put("f1C", f1(results.get("recallC"), results.get("precisionC")));
+        results.put("f1C", f1C(results.get("recallC"), results.get("precisionC")));
 
         return results;
     }

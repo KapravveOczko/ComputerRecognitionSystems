@@ -25,4 +25,10 @@ public class DataObject {
     public ArrayList<String> getPlaces() {
         return places;
     }
+
+    public void showPlaces(){
+        for(String place : places){
+            System.out.println(place);
+        }
+    }
 }

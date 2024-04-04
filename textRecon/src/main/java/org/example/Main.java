@@ -1,10 +1,9 @@
 package org.example;
 
-import org.example.vectorCreating.DictionariesCreator;
-import org.example.vectorCreating.JsonConverter;
-import org.example.vectorCreating.SgmConverter;
+import org.example.vectorCreating.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,8 +18,7 @@ public class Main {
 //        saving articles to json
 
 
-/*
-        converter.fillArticleList("test3");
+/*        converter.fillArticleList("reutTestData");
 //        converter.getArticlesFromData();
         List<Article> articlesInUse = converter.getArticleList();
 
@@ -29,9 +27,8 @@ public class Main {
             VectorCreator neigh = new VectorCreator();
             neigh.createNeighbourVector(dictionaries.getPoliticians(), dictionaries.getCurrencies(), dictionaries.getGeography(), article.getWordsList());
             neigh.showVector();
-            JsonConverter.appendDataToJson("testTestVectors.json", neigh.getVector(), neigh.getWordsVector(), article.getPlaces());
-        }
-*/
+            JsonConverter.appendDataToJson("reutTestData.json", neigh.getVector(), neigh.getWordsVector(), article.getPlaces());
+        }*/
 
 //        =========================================================================
 
@@ -40,8 +37,8 @@ public class Main {
         ArrayList<DataObject> testTestVectors = new ArrayList<>();
         ArrayList<DataObject> testLearningVectors = new ArrayList<>();
 
-        testLearningVectors = JsonConverter.loadDataFromJson("testLearningVectors.json");
-        testTestVectors = JsonConverter.loadDataFromJson("testTestVectors.json");
+        testLearningVectors = JsonConverter.loadDataFromJson("reutLearningData.json");
+        testTestVectors = JsonConverter.loadDataFromJson("reutTestData.json");
 
 //        knn.knn(testLearningVectors, testTestVectors, 10);
         qualityCalculator qualityCalculator = new qualityCalculator(knn.knn(testLearningVectors, testTestVectors, 10));
