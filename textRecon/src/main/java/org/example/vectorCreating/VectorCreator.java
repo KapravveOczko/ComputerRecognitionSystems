@@ -83,6 +83,8 @@ public class VectorCreator {
 //            TO DO:
 //            compare words witch keys in lowercase
 
+            word = word.toLowerCase();
+
             if(politiciansDictionary.containsKey(word)){
                 totalPoliticians++;
                 country = politiciansDictionary.get(word);

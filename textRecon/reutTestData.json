@@ -105,7 +105,7 @@
       5.0
     ],
     "wordVector": [
-      "",
+      "canada",
       "usa",
       ""
     ],
@@ -259,7 +259,7 @@
     "wordVector": [
       "",
       "",
-      ""
+      "france"
     ],
     "places": [
       "france"
@@ -485,7 +485,7 @@
       2.0
     ],
     "wordVector": [
-      "",
+      "usa",
       "",
       "uk"
     ],
@@ -582,7 +582,7 @@
     "wordVector": [
       "",
       "",
-      ""
+      "japan"
     ],
     "places": [
       "japan"
@@ -599,9 +599,9 @@
       3.0
     ],
     "wordVector": [
-      "",
+      "canada",
       "japan",
-      ""
+      "japan"
     ],
     "places": [
       "japan"
@@ -675,7 +675,7 @@
       0.0
     ],
     "wordVector": [
-      "",
+      "canada",
       "usa",
       "japan"
     ],
@@ -754,7 +754,7 @@
       2.0
     ],
     "wordVector": [
-      "",
+      "uk",
       "",
       "japan"
     ],
@@ -926,9 +926,9 @@
       2.0
     ],
     "wordVector": [
+      "canada",
       "",
-      "",
-      ""
+      "canada"
     ],
     "places": [
       "canada"

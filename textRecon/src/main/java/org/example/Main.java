@@ -37,16 +37,17 @@ public class Main {
         ArrayList<DataObject> testTestVectors = new ArrayList<>();
         ArrayList<DataObject> testLearningVectors = new ArrayList<>();
 
-        testLearningVectors = JsonConverter.loadDataFromJson("reutLearningData.json");
+//        testLearningVectors = JsonConverter.loadDataFromJson("reutLearningData2.json");
+        testLearningVectors = JsonConverter.loadDataFromJson("reutTestData.json");
         testTestVectors = JsonConverter.loadDataFromJson("reutTestData.json");
 
 //        knn.knn(testLearningVectors, testTestVectors, 10);
-        qualityCalculator qualityCalculator = new qualityCalculator(knn.knn(testLearningVectors, testTestVectors, 10));
+        qualityCalculator qualityCalculator = new qualityCalculator(knn.knn(testLearningVectors, testTestVectors, 5));
         qualityCalculator.showQualities();
 
 //        =========================================================================
 
-//        System.out.println("KURWA");
+//        System.out.println("DUPA");
 //        Calculator calc = new Calculator();
 //        System.out.println(calc.niewiadomskiMethod("",""));
 //        System.out.println(calc.niewiadomskiMethod("kot","kotek"));

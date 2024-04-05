@@ -47,7 +47,7 @@ public class KNN {
             System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
             System.out.println("wynik " + getResult(kNearestNeighbours));
 */
-
+            System.out.println("pojebie mnie | pojebie mnie | pojebie mnie | pojebie mnie | pojebie mnie | pojebie mnie | pojebie mnie | pojebie mnie | pojebie mnie | pojebie mnie | " + getResult(kNearestNeighbours));
             results.put(td,getResult(kNearestNeighbours));
         }
         return results;
