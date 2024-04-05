@@ -18,30 +18,26 @@ public class Main {
 //        saving articles to json
 
 
-/*        converter.fillArticleList("reutTestData");
+/*        converter.fillArticleList("routLearningData");
 //        converter.getArticlesFromData();
         List<Article> articlesInUse = converter.getArticleList();
 
         for (Article article: articlesInUse){
             System.out.println(article.cleanUpWordsList(article.getWordsList()));
-            VectorCreator neigh = new VectorCreator();
-            neigh.createNeighbourVector(dictionaries.getPoliticians(), dictionaries.getCurrencies(), dictionaries.getGeography(), article.getWordsList());
-            neigh.showVector();
-            JsonConverter.appendDataToJson("reutTestData.json", neigh.getVector(), neigh.getWordsVector(), article.getPlaces());
+            VectorCreator vectorCreator = new VectorCreator();
+            vectorCreator.createNeighbourVector(dictionaries.getPoliticians(), dictionaries.getCurrencies(), dictionaries.getGeography(), article.getWordsList());
+            vectorCreator.showVector();
+            JsonConverter.appendDataToJson("routLearningData.json", vectorCreator.getVector(), vectorCreator.getWordsVector(), article.getPlaces());
         }*/
 
 //        =========================================================================
 
 //        KNN TEST
 
-        ArrayList<DataObject> testTestVectors = new ArrayList<>();
-        ArrayList<DataObject> testLearningVectors = new ArrayList<>();
 
-//        testLearningVectors = JsonConverter.loadDataFromJson("reutLearningData2.json");
-        testLearningVectors = JsonConverter.loadDataFromJson("reutTestData.json");
-        testTestVectors = JsonConverter.loadDataFromJson("reutTestData.json");
+        ArrayList<DataObject> testLearningVectors = JsonConverter.loadDataFromJson("routLearningData.json");
+        ArrayList<DataObject> testTestVectors = JsonConverter.loadDataFromJson("reutTestData.json");
 
-//        knn.knn(testLearningVectors, testTestVectors, 10);
         qualityCalculator qualityCalculator = new qualityCalculator(knn.knn(testLearningVectors, testTestVectors, 5));
         qualityCalculator.showQualities();
 
