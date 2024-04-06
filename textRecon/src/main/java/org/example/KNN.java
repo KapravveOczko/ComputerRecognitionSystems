@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.*;
 
-import static java.lang.Double.NaN;
+import static org.example.constants.Constants.*;
 
 public class KNN {
 
@@ -32,22 +32,13 @@ public class KNN {
             ArrayList<Neighbour> neighbours = new ArrayList<>();
             for (DataObject ld : learningData) {
                 Double distance = this.calculator.euclideanMetrics(td.getVector(), ld.getVector(), calculator.createWordComp(td.getWordVector(), ld.getWordVector()));
-//                System.out.println(distance);
                 neighbours.add(new Neighbour(ld.getPlaces(), distance));
             }
 
             // sorting neighbours
             Collections.sort(neighbours, Comparator.comparing(Neighbour::getDistance));
-            List<Neighbour> kNearestNeighbours = neighbours.subList(0, Math.min((k - 1), neighbours.size()));
+            List<Neighbour> kNearestNeighbours = neighbours.subList(0, Math.min(k, neighbours.size()));
 
-            // checking neighbours
-/*            for (Neighbour neighbour : kNearestNeighbours) {
-                System.out.println("country distance " + neighbour.getPlaces() + " | " + neighbour.getDistance());
-            }
-            System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-            System.out.println("wynik " + getResult(kNearestNeighbours));
-*/
-            System.out.println("pojebie mnie | pojebie mnie | pojebie mnie | pojebie mnie | pojebie mnie | pojebie mnie | pojebie mnie | pojebie mnie | pojebie mnie | pojebie mnie | " + getResult(kNearestNeighbours));
             results.put(td,getResult(kNearestNeighbours));
         }
         return results;
@@ -56,12 +47,9 @@ public class KNN {
 
     public String getResult(List<Neighbour> kNearestNeighbors) {
         Map<String, Integer> countryScore = new HashMap<>();
-        countryScore.put("canada", 0);
-        countryScore.put("japan", 0);
-        countryScore.put("west-germany", 0);
-        countryScore.put("uk", 0);
-        countryScore.put("france", 0);
-        countryScore.put("usa", 0);
+        for (String country : COUNTRIES) {
+            countryScore.put(country, 0);
+        }
 
         for (Neighbour neighbour : kNearestNeighbors) {
             for (String place : neighbour.getPlaces()) {
@@ -78,7 +66,7 @@ public class KNN {
             }
         }
 
-        showCountCountries(countryScore);
+        // showCountCountries(countryScore);
 
         return maxCountry;
     }
