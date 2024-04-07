@@ -3,73 +3,37 @@ package org.example;
 import org.example.vectorCreating.*;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
 
+        Main main = new Main();
+        // main.convertsTextsIntoVectorsFiles();
+        main.knnOperation();
+
+    }
+
+    private void convertsTextsIntoVectorsFiles() {
         DictionariesCreator dictionaries = new DictionariesCreator();
         SgmConverter converter = new SgmConverter();
-        JsonConverter jsonConverter = new JsonConverter();
-        KNN knn = new KNN();
 
-//        =========================================================================
+        converter.fillArticleList("routLearningData");
+        converter.getArticlesFromData();
+        ArrayList<Article> articlesInUse = converter.getArticleList();
 
-//        saving articles to json
-
-
-/*        converter.fillArticleList("routLearningData");
-//        converter.getArticlesFromData();
-        List<Article> articlesInUse = converter.getArticleList();
-
-        for (Article article: articlesInUse){
-            System.out.println(article.cleanUpWordsList(article.getWordsList()));
+        for (Article article : articlesInUse) {
             VectorCreator vectorCreator = new VectorCreator();
-            vectorCreator.createNeighbourVector(dictionaries.getPoliticians(), dictionaries.getCurrencies(), dictionaries.getGeography(), article.getWordsList());
-            vectorCreator.showVector();
+            vectorCreator.createNeighborVector(dictionaries.getPoliticians(), dictionaries.getCurrencies(), dictionaries.getGeography(), article.getWordsList());
             JsonConverter.appendDataToJson("routLearningDataIPart.json", vectorCreator.getVector(), vectorCreator.getWordsVector(), article.getPlaces());
-        }*/
+        }
+    }
 
-//        =========================================================================
-
-//        KNN TEST
-
-
+    private void knnOperation() {
+        KNN knn = new KNN();
         ArrayList<DataObject> testLearningVectors = JsonConverter.loadDataFromJson("testLearning9%.json");
         ArrayList<DataObject> testTestVectors = JsonConverter.loadDataFromJson("testData9%.json");
 
-
-//        for (int i=2; i!=12; i++){
-//            qualityCalculator qualityCalculator = new qualityCalculator(knn.knn(testLearningVectors, testTestVectors, i));
-//            qualityCalculator.showQualities();
-//        }
         qualityCalculator qualityCalculator = new qualityCalculator(knn.knn(testLearningVectors, testTestVectors, 3));
         qualityCalculator.showQualities();
-
-//        =========================================================================
-
-//        System.out.println("DUPA");
-//        Calculator calc = new Calculator();
-//        System.out.println(calc.niewiadomskiMethod("",""));
-//        System.out.println(calc.niewiadomskiMethod("kot","kotek"));
-
-//        =========================================================================
-
-//        List<Double> v1 = new ArrayList<>();
-//        v1.add(0.21);
-//        v1.add(5.0);
-//        v1.add(0.98);
-//
-//        List<Double> v2 = new ArrayList<>();
-//        v2.add(0.13);
-//        v2.add(12.0);
-//        v2.add(0.99);
-//
-//        List<Double> wordComp = new ArrayList<>();
-//        wordComp.add(calc.niewiadomskiMethod("kotek", "kot"));
-//
-//        System.out.println(calc.euclideanMetrics(v1,v2,wordComp));
-//        System.out.println(calc.streetMetrics(v1,v2,wordComp));
-//        System.out.println(calc.czebyszewMetrics(v1,v2,wordComp));
     }
 }

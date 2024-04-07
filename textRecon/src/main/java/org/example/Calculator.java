@@ -1,7 +1,6 @@
 package org.example;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Calculator {
 
@@ -97,7 +96,6 @@ public class Calculator {
         ArrayList<Double> wordComp = new ArrayList<>();
         for(int i=0; i<v1.size(); i++){
             wordComp.add(niewiadomskiMethod(v1.get(i), v2.get(i)));
-//            System.out.println("nMetod: for " + " v1.get(i): " + v1.get(i) + " v2.get(i): " + v2.get(i) + " metod " + niewiadomskiMethod(v1.get(i), v2.get(i)));
         }
 
         return wordComp;

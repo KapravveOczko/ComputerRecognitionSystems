@@ -28,7 +28,7 @@ public class VectorCreator {
     first 3 are counted as x = (highestCountryScore / totalScore)
     */
 
-    public void createNeighbourVector( Map<String,String> politiciansDictionary,
+    public void createNeighborVector( Map<String,String> politiciansDictionary,
                                        Map<String,String> currenciesDictionary ,
                                        Map<String,String> geographyDictionary,
                                        List<String> wordsList){

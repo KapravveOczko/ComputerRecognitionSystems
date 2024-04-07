@@ -8,11 +8,11 @@ public class KNN {
 
     Calculator calculator = new Calculator();
 
-    public static class Neighbour {
+    public static class Neighbor {
         private ArrayList<String> places;
         private Double distance;
 
-        public Neighbour(ArrayList<String> places, Double distance) {
+        public Neighbor(ArrayList<String> places, Double distance) {
             this.places = places;
             this.distance = distance;
         }
@@ -29,7 +29,7 @@ public class KNN {
         Map<DataObject, String> results = new HashMap<>();
 
         for (DataObject td : testData) {
-            ArrayList<Neighbour> neighbours = new ArrayList<>();
+            ArrayList<Neighbor> neighbors = new ArrayList<>();
             for (DataObject ld : learningData) {
                 List<Integer> vectorIndexes = Arrays.asList(0,1,2,3,4,5,6);
                 List<Integer> vectorWordIndexes = Arrays.asList(0,1,2);
@@ -38,27 +38,27 @@ public class KNN {
                 ArrayList<String> tdWordVector = getSpecificWordVectorList(td, vectorWordIndexes);
                 ArrayList<String> ldWordVector = getSpecificWordVectorList(ld, vectorWordIndexes);
                 Double distance = this.calculator.czebyszewMetrics(tdVector, ldVector, calculator.createWordComp(tdWordVector, ldWordVector));
-                neighbours.add(new Neighbour(ld.getPlaces(), distance));
+                neighbors.add(new Neighbor(ld.getPlaces(), distance));
             }
 
-            // sorting neighbours
-            Collections.sort(neighbours, Comparator.comparing(Neighbour::getDistance));
-            List<Neighbour> kNearestNeighbours = neighbours.subList(0, Math.min(k, neighbours.size()));
+            // sorting neighbors
+            Collections.sort(neighbors, Comparator.comparing(Neighbor::getDistance));
+            List<Neighbor> kNearestNeighbors = neighbors.subList(0, Math.min(k, neighbors.size()));
 
-            results.put(td,getResult(kNearestNeighbours));
+            results.put(td,getResult(kNearestNeighbors));
         }
         return results;
     }
 
 
-    public String getResult(List<Neighbour> kNearestNeighbors) {
+    public String getResult(List<Neighbor> kNearestNeighbors) {
         Map<String, Integer> countryScore = new HashMap<>();
         for (String country : COUNTRIES) {
             countryScore.put(country, 0);
         }
 
-        for (Neighbour neighbour : kNearestNeighbors) {
-            for (String place : neighbour.getPlaces()) {
+        for (Neighbor neighbor : kNearestNeighbors) {
+            for (String place : neighbor.getPlaces()) {
                 countryScore.put(place, countryScore.getOrDefault(place, 0) + 1);
             }
         }
