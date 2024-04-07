@@ -80,9 +80,6 @@ public class VectorCreator {
                 wordsWithHyphen ++;
             }
 
-//            TO DO:
-//            compare words witch keys in lowercase
-
             word = word.toLowerCase();
 
             if(politiciansDictionary.containsKey(word)){

@@ -24,7 +24,7 @@ public class Calculator {
         double ans = 0.0;
 
         for (Double aDouble : wordComp) {
-            ans += (1 - aDouble);
+            ans += Math.pow((1.0 - aDouble), 2);
         }
         for (int i = 0; i < v1.size(); i++){
             ans += Math.abs(v1.get(i) - v2.get(i));

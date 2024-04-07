@@ -31,7 +31,13 @@ public class KNN {
         for (DataObject td : testData) {
             ArrayList<Neighbour> neighbours = new ArrayList<>();
             for (DataObject ld : learningData) {
-                Double distance = this.calculator.euclideanMetrics(td.getVector(), ld.getVector(), calculator.createWordComp(td.getWordVector(), ld.getWordVector()));
+                List<Integer> vectorIndexes = Arrays.asList(0,1,2,3,4,5,6);
+                List<Integer> vectorWordIndexes = Arrays.asList(0,1,2);
+                ArrayList<Double> tdVector = getSpecificVectorList(td, vectorIndexes);
+                ArrayList<Double> ldVector = getSpecificVectorList(ld, vectorIndexes);
+                ArrayList<String> tdWordVector = getSpecificWordVectorList(td, vectorWordIndexes);
+                ArrayList<String> ldWordVector = getSpecificWordVectorList(ld, vectorWordIndexes);
+                Double distance = this.calculator.czebyszewMetrics(tdVector, ldVector, calculator.createWordComp(tdWordVector, ldWordVector));
                 neighbours.add(new Neighbour(ld.getPlaces(), distance));
             }
 
@@ -85,6 +91,22 @@ public class KNN {
         for(Map.Entry<String, Integer> entry: countryCounts.entrySet()){
             System.out.println(entry.getKey() + " " + entry.getValue());
         }
+    }
+
+    private ArrayList<Double> getSpecificVectorList(DataObject dataObject, List<Integer> indexes){
+        ArrayList<Double> vector = new ArrayList<>();
+        for (int index: indexes){
+            vector.add(dataObject.getVector().get(index));
+        }
+        return vector;
+    }
+
+    private ArrayList<String> getSpecificWordVectorList(DataObject dataObject, List<Integer> indexes){
+        ArrayList<String> vector = new ArrayList<>();
+        for (int index: indexes){
+            vector.add(dataObject.getWordVector().get(index));
+        }
+        return vector;
     }
 
 }

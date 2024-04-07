@@ -95,6 +95,9 @@ public class qualityCalculator {
     }
 
     public double precision(int tp, int fp){
+        if(tp + fp == 0.0){
+            return 0.0;
+        }
         return (double) tp/(tp + fp);
     }
     public double recall(int tp, int fn){

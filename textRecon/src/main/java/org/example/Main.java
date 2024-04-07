@@ -27,7 +27,7 @@ public class Main {
             VectorCreator vectorCreator = new VectorCreator();
             vectorCreator.createNeighbourVector(dictionaries.getPoliticians(), dictionaries.getCurrencies(), dictionaries.getGeography(), article.getWordsList());
             vectorCreator.showVector();
-            JsonConverter.appendDataToJson("routLearningData.json", vectorCreator.getVector(), vectorCreator.getWordsVector(), article.getPlaces());
+            JsonConverter.appendDataToJson("routLearningDataIPart.json", vectorCreator.getVector(), vectorCreator.getWordsVector(), article.getPlaces());
         }*/
 
 //        =========================================================================
@@ -35,10 +35,15 @@ public class Main {
 //        KNN TEST
 
 
-        ArrayList<DataObject> testLearningVectors = JsonConverter.loadDataFromJson("routLearningData.json");
-        ArrayList<DataObject> testTestVectors = JsonConverter.loadDataFromJson("reutTestData.json");
+        ArrayList<DataObject> testLearningVectors = JsonConverter.loadDataFromJson("testLearning9%.json");
+        ArrayList<DataObject> testTestVectors = JsonConverter.loadDataFromJson("testData9%.json");
 
-        qualityCalculator qualityCalculator = new qualityCalculator(knn.knn(testLearningVectors, testTestVectors, 5));
+
+//        for (int i=2; i!=12; i++){
+//            qualityCalculator qualityCalculator = new qualityCalculator(knn.knn(testLearningVectors, testTestVectors, i));
+//            qualityCalculator.showQualities();
+//        }
+        qualityCalculator qualityCalculator = new qualityCalculator(knn.knn(testLearningVectors, testTestVectors, 3));
         qualityCalculator.showQualities();
 
 //        =========================================================================
