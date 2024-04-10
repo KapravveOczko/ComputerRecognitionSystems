@@ -7,7 +7,7 @@ import java.util.Map;
 
 import static org.example.constants.Constants.*;
 
-public class qualityCalculator {
+public class QualityCalculator {
 
     double accuracy;
     Map<String,Double> qualityC;
@@ -16,7 +16,7 @@ public class qualityCalculator {
     Map<String, List<Integer>> allValues;
 
 
-    public qualityCalculator(Map<DataObject, String> results) {
+    public QualityCalculator(Map<DataObject, String> results) {
 
         double precisionSum = 0.0;
         double recallSum = 0.0;
@@ -43,9 +43,9 @@ public class qualityCalculator {
         this.accuracy = tpSum / allPopulation;
         this.qualityC = setUniversalQuality(tpSum, recallSum, precisionSum);
 
-        for (String country : COUNTRIES) {
-            showValuesByCountry(country, allValues.get(country));
-        }
+//        for (String country : COUNTRIES) {
+//            showValuesByCountry(country, allValues.get(country));
+//        }
 
     }
 
@@ -149,6 +149,24 @@ public class qualityCalculator {
         System.out.println("recallC: " + this.qualityC.get("recallC"));
         System.out.println("f1C: " + this.qualityC.get("f1C"));
         System.out.println();
+        for (String country : COUNTRIES) {
+            System.out.println("Wartości dla " + country + ":");
+            System.out.println("precision: " + this.allQualities.get(country).get("precision"));
+            System.out.println("recall: " + this.allQualities.get(country).get("recall"));
+            System.out.println("f1: " + this.allQualities.get(country).get("f1"));
+            System.out.println();
+        }
+    }
+
+    public void showComprehensiveQualities(){
+        System.out.println("Wartośći ogólne:");
+        System.out.println("accuracy: " + this.accuracy);
+        System.out.println("precisionC: " + this.qualityC.get("precisionC"));
+        System.out.println("recallC: " + this.qualityC.get("recallC"));
+        System.out.println("f1C: " + this.qualityC.get("f1C"));
+    }
+
+    public void showAccuracyQualities(){
         for (String country : COUNTRIES) {
             System.out.println("Wartości dla " + country + ":");
             System.out.println("precision: " + this.allQualities.get(country).get("precision"));

@@ -25,8 +25,9 @@ public class KNN {
         }
     }
 
-    public Map<DataObject, String> knn(List<DataObject> learningData, List<DataObject> testData, int k) {
+    public Map<DataObject, String> knn(List<DataObject> learningData, List<DataObject> testData, int k, int method) {
         Map<DataObject, String> results = new HashMap<>();
+        Double distance = null;
 
         for (DataObject td : testData) {
             ArrayList<Neighbor> neighbors = new ArrayList<>();
@@ -37,7 +38,13 @@ public class KNN {
                 ArrayList<Double> ldVector = getSpecificVectorList(ld, vectorIndexes);
                 ArrayList<String> tdWordVector = getSpecificWordVectorList(td, vectorWordIndexes);
                 ArrayList<String> ldWordVector = getSpecificWordVectorList(ld, vectorWordIndexes);
-                Double distance = this.calculator.czebyszewMetrics(tdVector, ldVector, calculator.createWordComp(tdWordVector, ldWordVector));
+                if(method == EUCLIDEAN) {
+                    distance = this.calculator.czebyszewMetrics(tdVector, ldVector, calculator.createWordComp(tdWordVector, ldWordVector));
+                } else if (method == STREET){
+                    distance = this.calculator.streetMetrics(tdVector, ldVector, calculator.createWordComp(tdWordVector, ldWordVector));
+                } else if (method == CZEBYSZEW) {
+                    distance = this.calculator.czebyszewMetrics(tdVector, ldVector, calculator.createWordComp(tdWordVector, ldWordVector));
+                }
                 neighbors.add(new Neighbor(ld.getPlaces(), distance));
             }
 

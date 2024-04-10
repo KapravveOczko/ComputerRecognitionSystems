@@ -1,0 +1,749 @@
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            ULICZNA         
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+==== k = 2
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7664300435081292
+precisionC: 0.7975215492365946
+recallC: 0.9309192529776756
+f1C: 0.8590727132775616
+
+Wartości dla usa:
+precision: 0.809995051954478
+recall: 0.9495359628770301
+f1: 0.8742323097463285
+
+Wartości dla canada:
+precision: 0.15841584158415842
+recall: 0.05063291139240506
+f1: 0.07673860911270983
+
+Wartości dla japan:
+precision: 0.21649484536082475
+recall: 0.14788732394366197
+f1: 0.17573221757322177
+
+Wartości dla uk:
+precision: 0.297029702970297
+recall: 0.0949367088607595
+f1: 0.14388489208633096
+
+Wartości dla france:
+precision: 0.25
+recall: 0.019801980198019802
+f1: 0.03669724770642201
+
+Wartości dla west-germany:
+precision: 0.2222222222222222
+recall: 0.05063291139240506
+f1: 0.08247422680412371
+
+==== k = 3
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7657430730478589
+precisionC: 0.7967189694445557
+recallC: 0.9224641445571987
+f1C: 0.8549929051948738
+
+Wartości dla usa:
+precision: 0.8110059760956175
+recall: 0.9443316903450275
+f1: 0.8726054922973878
+
+Wartości dla canada:
+precision: 0.2247191011235955
+recall: 0.06369426751592357
+f1: 0.09925558312655088
+
+Wartości dla japan:
+precision: 0.19101123595505617
+recall: 0.12056737588652482
+f1: 0.14782608695652175
+
+Wartości dla uk:
+precision: 0.3082706766917293
+recall: 0.128125
+f1: 0.18101545253863133
+
+Wartości dla france:
+precision: 0.35714285714285715
+recall: 0.05
+f1: 0.08771929824561404
+
+Wartości dla west-germany:
+precision: 0.15384615384615385
+recall: 0.05128205128205128
+f1: 0.07692307692307693
+
+==== k = 4
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7765056102587589
+precisionC: 0.7976512342985668
+recallC: 0.9497186949895643
+f1C: 0.8670680164485485
+
+Wartości dla usa:
+precision: 0.8073661255149018
+recall: 0.9652375434530707
+f1: 0.8792716717245018
+
+Wartości dla canada:
+precision: 0.2653061224489796
+recall: 0.041401273885350316
+f1: 0.07162534435261707
+
+Wartości dla japan:
+precision: 0.2054794520547945
+recall: 0.10714285714285714
+f1: 0.14084507042253522
+
+Wartości dla uk:
+precision: 0.26666666666666666
+recall: 0.0759493670886076
+f1: 0.11822660098522167
+
+Wartości dla france:
+precision: 0.2222222222222222
+recall: 0.02
+f1: 0.03669724770642202
+
+Wartości dla west-germany:
+precision: 0.2631578947368421
+recall: 0.06329113924050633
+f1: 0.10204081632653061
+
+==== k = 5
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7838332951683078
+precisionC: 0.8001486664935419
+recallC: 0.9603462299098936
+f1C: 0.872958799033531
+
+Wartości dla usa:
+precision: 0.8087917367283209
+recall: 0.9750941210541558
+f1: 0.8841911764705882
+
+Wartości dla canada:
+precision: 0.275
+recall: 0.035256410256410256
+f1: 0.0625
+
+Wartości dla japan:
+precision: 0.21875
+recall: 0.10144927536231885
+f1: 0.13861386138613863
+
+Wartości dla uk:
+precision: 0.3058823529411765
+recall: 0.08306709265175719
+f1: 0.1306532663316583
+
+Wartości dla france:
+precision: 0.3333333333333333
+recall: 0.02
+f1: 0.03773584905660377
+
+Wartości dla west-germany:
+precision: 0.3333333333333333
+recall: 0.038461538461538464
+f1: 0.06896551724137931
+
+==== k = 6
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7909319899244333
+precisionC: 0.8000174870688901
+recallC: 0.9746809301515581
+f1C: 0.8787541374551843
+
+Wartości dla usa:
+precision: 0.8059101654846336
+recall: 0.9866859623733719
+f1: 0.8871828236824983
+
+Wartości dla canada:
+precision: 0.3333333333333333
+recall: 0.022435897435897436
+f1: 0.042042042042042045
+
+Wartości dla japan:
+precision: 0.22916666666666666
+recall: 0.08029197080291971
+f1: 0.11891891891891891
+
+Wartości dla uk:
+precision: 0.40350877192982454
+recall: 0.07348242811501597
+f1: 0.12432432432432432
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.4444444444444444
+recall: 0.05128205128205128
+f1: 0.09195402298850575
+
+==== k = 7
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.790245019464163
+precisionC: 0.7976875841148617
+recallC: 0.9781653121331145
+f1C: 0.8787555842592364
+
+Wartości dla usa:
+precision: 0.8025387870239774
+recall: 0.9881331403762663
+f1: 0.8857179919574523
+
+Wartości dla canada:
+precision: 0.35294117647058826
+recall: 0.019230769230769232
+f1: 0.03647416413373861
+
+Wartości dla japan:
+precision: 0.2558139534883721
+recall: 0.08029197080291971
+f1: 0.1222222222222222
+
+Wartości dla uk:
+precision: 0.3958333333333333
+recall: 0.06070287539936102
+f1: 0.10526315789473684
+
+Wartości dla france:
+precision: 0.5
+recall: 0.01
+f1: 0.0196078431372549
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+==== k = 8
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7911609800778566
+precisionC: 0.7965058691107896
+recallC: 0.9848204109469759
+f1C: 0.8807092177564784
+
+Wartości dla usa:
+precision: 0.8
+recall: 0.9921852387843705
+f1: 0.8857881136950905
+
+Wartości dla canada:
+precision: 0.5
+recall: 0.016025641025641024
+f1: 0.031055900621118012
+
+Wartości dla japan:
+precision: 0.3055555555555556
+recall: 0.07971014492753623
+f1: 0.1264367816091954
+
+Wartości dla uk:
+precision: 0.3333333333333333
+recall: 0.03514376996805112
+f1: 0.06358381502890173
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+==== k = 9
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7923059308449737
+precisionC: 0.7971723292806322
+recallC: 0.9878552353601869
+f1C: 0.882329073862347
+
+Wartości dla usa:
+precision: 0.8000465549348231
+recall: 0.9942146369684698
+f1: 0.8866245324390558
+
+Wartości dla canada:
+precision: 0.375
+recall: 0.009584664536741214
+f1: 0.018691588785046728
+
+Wartości dla japan:
+precision: 0.21875
+recall: 0.051470588235294115
+f1: 0.08333333333333334
+
+Wartości dla uk:
+precision: 0.4
+recall: 0.038461538461538464
+f1: 0.07017543859649124
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 1.0
+recall: 0.01282051282051282
+f1: 0.02531645569620253
+
+==== k = 10
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7943668422257842
+precisionC: 0.7978530253281453
+recallC: 0.9912758531830603
+f1C: 0.8841089626309887
+
+Wartości dla usa:
+precision: 0.8001856579252726
+recall: 0.9971081550028918
+f1: 0.8878588901763872
+
+Wartości dla canada:
+precision: 0.5714285714285714
+recall: 0.01282051282051282
+f1: 0.025078369905956112
+
+Wartości dla japan:
+precision: 0.23076923076923078
+recall: 0.044444444444444446
+f1: 0.07453416149068323
+
+Wartości dla uk:
+precision: 0.4583333333333333
+recall: 0.03536977491961415
+f1: 0.06567164179104477
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+==== k = 11
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7934508816120907
+precisionC: 0.7970813363748741
+recallC: 0.9926374334681926
+f1C: 0.8841755311913395
+
+Wartości dla usa:
+precision: 0.7991195551436515
+recall: 0.9971089910378722
+f1: 0.8872025723472668
+
+Wartości dla canada:
+precision: 0.5
+recall: 0.006389776357827476
+f1: 0.012618296529968454
+
+Wartości dla japan:
+precision: 0.20833333333333334
+recall: 0.03731343283582089
+f1: 0.06329113924050632
+
+Wartości dla uk:
+precision: 0.4090909090909091
+recall: 0.028938906752411574
+f1: 0.05405405405405406
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+==== k = 12
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7957407831463247
+precisionC: 0.7977430216049434
+recallC: 0.9930443160943999
+f1C: 0.8847439968237738
+
+Wartości dla usa:
+precision: 0.7997221579069229
+recall: 0.9988432620011567
+f1: 0.8882602545968882
+
+Wartości dla canada:
+precision: 0.75
+recall: 0.009584664536741214
+f1: 0.01892744479495268
+
+Wartości dla japan:
+precision: 0.3333333333333333
+recall: 0.05925925925925926
+f1: 0.10062893081761005
+
+Wartości dla uk:
+precision: 0.5
+recall: 0.03215434083601286
+f1: 0.060422960725075525
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+==== k = 13
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7948248225326311
+precisionC: 0.7969327189023648
+recallC: 0.9935763206242746
+f1C: 0.8844562760112558
+
+Wartości dla usa:
+precision: 0.7989356779268857
+recall: 0.9985540775014459
+f1: 0.8876606683804626
+
+Wartości dla canada:
+precision: 0.6666666666666666
+recall: 0.006389776357827476
+f1: 0.012658227848101266
+
+Wartości dla japan:
+precision: 0.38095238095238093
+recall: 0.05970149253731343
+f1: 0.1032258064516129
+
+Wartości dla uk:
+precision: 0.38095238095238093
+recall: 0.02572347266881029
+f1: 0.048192771084337345
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+==== k = 14
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7936798717655141
+precisionC: 0.7966570224409562
+recallC: 0.99379394673303
+f1C: 0.8843726414797428
+
+Wartości dla usa:
+precision: 0.7986577181208053
+recall: 0.9979757085020243
+f1: 0.8872605733384754
+
+Wartości dla canada:
+precision: 0.5
+recall: 0.003194888178913738
+f1: 0.006349206349206348
+
+Wartości dla japan:
+precision: 0.2727272727272727
+recall: 0.044444444444444446
+f1: 0.07643312101910828
+
+Wartości dla uk:
+precision: 0.36363636363636365
+recall: 0.02572347266881029
+f1: 0.04804804804804804
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+==== k = 15
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7941378520723609
+precisionC: 0.7964445842473524
+recallC: 0.9954989071199837
+f1C: 0.8849159775623063
+
+Wartości dla usa:
+precision: 0.7981057981057981
+recall: 0.9991324465008675
+f1: 0.8873763965583664
+
+Wartości dla canada:
+precision: 0.5
+recall: 0.003194888178913738
+f1: 0.006349206349206348
+
+Wartości dla japan:
+precision: 0.2857142857142857
+recall: 0.04477611940298507
+f1: 0.07741935483870967
+
+Wartości dla uk:
+precision: 0.4
+recall: 0.01929260450160772
+f1: 0.03680981595092024
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+==== k = 16
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7945958323792077
+precisionC: 0.7964331684980466
+recallC: 0.9943668878672681
+f1C: 0.8844614096796933
+
+Wartości dla usa:
+precision: 0.7976905311778291
+recall: 0.9988432620011567
+f1: 0.8870056497175142
+
+Wartości dla canada:
+precision: 1.0
+recall: 0.006389776357827476
+f1: 0.012698412698412697
+
+Wartości dla japan:
+precision: 0.3333333333333333
+recall: 0.04477611940298507
+f1: 0.07894736842105263
+
+Wartości dla uk:
+precision: 0.4
+recall: 0.01929260450160772
+f1: 0.03680981595092024
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 1.0
+recall: 0.02564102564102564
+f1: 0.05
+
+==== k = 17
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7941378520723609
+precisionC: 0.7959205341938579
+recallC: 0.9955020003548259
+f1C: 0.8845936328618115
+
+Wartości dla usa:
+precision: 0.797185048454084
+recall: 0.9991324465008675
+f1: 0.8868069815195072
+
+Wartości dla canada:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla japan:
+precision: 0.3157894736842105
+recall: 0.044444444444444446
+f1: 0.07792207792207792
+
+Wartości dla uk:
+precision: 0.4166666666666667
+recall: 0.01607717041800643
+f1: 0.030959752321981424
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 1.0
+recall: 0.02564102564102564
+f1: 0.05
+
+==== k = 18
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7948248225326311
+precisionC: 0.7960089254625075
+recallC: 0.9958035129730505
+f1C: 0.8847672527885247
+
+Wartości dla usa:
+precision: 0.7970947659672585
+recall: 0.9997108155002892
+f1: 0.8869788325849903
+
+Wartości dla canada:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla japan:
+precision: 0.35294117647058826
+recall: 0.044444444444444446
+f1: 0.07894736842105264
+
+Wartości dla uk:
+precision: 0.5454545454545454
+recall: 0.01929260450160772
+f1: 0.037267080745341616
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 1.0
+recall: 0.02564102564102564
+f1: 0.05
+
+==== k = 19
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7943668422257842
+precisionC: 0.7952484662847482
+recallC: 0.9969291013314375
+f1C: 0.8847408350088736
+
+Wartości dla usa:
+precision: 0.7962238084273544
+recall: 1.0
+f1: 0.8865530060248686
+
+Wartości dla canada:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla japan:
+precision: 0.375
+recall: 0.044444444444444446
+f1: 0.07947019867549669
+
+Wartości dla uk:
+precision: 0.625
+recall: 0.01607717041800643
+f1: 0.031347962382445145
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+==== k = 20
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7945958323792077
+precisionC: 0.7954541924795941
+recallC: 0.996651994897313
+f1C: 0.8847589650305501
+
+Wartości dla usa:
+precision: 0.7964071856287425
+recall: 1.0
+f1: 0.8866666666666666
+
+Wartości dla canada:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla japan:
+precision: 0.375
+recall: 0.044444444444444446
+f1: 0.07947019867549669
+
+Wartości dla uk:
+precision: 0.6666666666666666
+recall: 0.01929260450160772
+f1: 0.0375
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+
+
+

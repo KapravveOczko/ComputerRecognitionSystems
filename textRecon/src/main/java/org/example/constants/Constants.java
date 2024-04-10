@@ -11,6 +11,10 @@ public class Constants {
     public static final int FP = 2;
     public static final int FN = 3;
 
+    public static final int EUCLIDEAN = 1;
+    public static final int STREET = 2;
+    public static final int CZEBYSZEW = 3;
+
 
     public static final String USA = "usa";
     public static final String JAPAN = "japan";

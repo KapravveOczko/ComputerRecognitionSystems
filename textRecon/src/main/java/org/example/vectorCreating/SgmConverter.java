@@ -1,5 +1,6 @@
 package org.example.vectorCreating;
 
+import org.example.DataObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -9,6 +10,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.example.constants.Constants.*;
 
 public class SgmConverter {
 
@@ -59,6 +62,7 @@ public class SgmConverter {
 //                System.out.println("=========================================");
 //                System.out.println(reutersDoc);
 //            }
+
             return reutersDocuments;
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -66,30 +70,41 @@ public class SgmConverter {
     }
 
     void convertFile(Document doc){
+
         List<String> articlePlaces = new ArrayList<>();
-        boolean isIncluded = false;
 
-            String places = doc.getElementsByTag("PLACES").text();
+        String places = doc.getElementsByTag("PLACES").text();
 
-            for (String place: placesList)
-            {
-                if(places.contains(place)){
-                    articlePlaces.add(place);
-                    isIncluded = true;
-                }
+        boolean isNotFound = !places.isEmpty() ? true : false;
+
+        for (String place: places.split(" ")) {
+            articlePlaces.add(place);
+            if (!this.placesList.contains(place.toLowerCase())) {
+                isNotFound = false;
             }
+        }
 
-            if (isIncluded){
-                String content = doc.getElementsByTag("TEXT").text().replaceAll("[\n]", "");
-                content = content.substring(0, doc.getElementsByTag("TITLE").text().length()) + content.substring(doc.getElementsByTag("TITLE").text().length() + doc.getElementsByTag("DATELINE").text().length()+1, content.length()-7);
-//                System.out.println("-----------------------------");
-//                System.out.println(content);
-//                System.out.println("-----------------------------");
+
+        if (isNotFound){
+
+            System.out.println("==========================");
+
+            String content = doc.getElementsByTag("TEXT").text().replaceAll("[\n]", "");
+//            try {
+//                content = content.substring(0, doc.getElementsByTag("TITLE").text().length()) + content.substring(doc.getElementsByTag("TITLE").text().length() + doc.getElementsByTag("DATELINE").text().length()+1, content.length()-7);
                 Article article = new Article(articlePlaces, content);
+                System.out.println(places);
                 this.articleList.add(article);
-            }
+//            }
+//            catch (Exception e){
+//                return;
+//            }
+        }
 
     }
+
+
+
 
     public void getArticlesFromData(){
         String fileName = "reut2-0";
