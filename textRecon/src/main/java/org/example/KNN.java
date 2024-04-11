@@ -32,14 +32,14 @@ public class KNN {
         for (DataObject td : testData) {
             ArrayList<Neighbor> neighbors = new ArrayList<>();
             for (DataObject ld : learningData) {
-                List<Integer> vectorIndexes = Arrays.asList(0,1,2,3,4,5,6);
+                List<Integer> vectorIndexes = Arrays.asList(0,1,2,3,4);
                 List<Integer> vectorWordIndexes = Arrays.asList(0,1,2);
                 ArrayList<Double> tdVector = getSpecificVectorList(td, vectorIndexes);
                 ArrayList<Double> ldVector = getSpecificVectorList(ld, vectorIndexes);
                 ArrayList<String> tdWordVector = getSpecificWordVectorList(td, vectorWordIndexes);
                 ArrayList<String> ldWordVector = getSpecificWordVectorList(ld, vectorWordIndexes);
                 if(method == EUCLIDEAN) {
-                    distance = this.calculator.czebyszewMetrics(tdVector, ldVector, calculator.createWordComp(tdWordVector, ldWordVector));
+                    distance = this.calculator.euclideanMetrics(tdVector, ldVector, calculator.createWordComp(tdWordVector, ldWordVector));
                 } else if (method == STREET){
                     distance = this.calculator.streetMetrics(tdVector, ldVector, calculator.createWordComp(tdWordVector, ldWordVector));
                 } else if (method == CZEBYSZEW) {

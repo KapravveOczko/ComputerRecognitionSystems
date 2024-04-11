@@ -1,0 +1,120 @@
+===============================================
+            10 %         
+             II
+===============================================
+EUKLIDES
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.8130584192439863
+precisionC: 0.814295633822261
+recallC: 0.9926576653390429
+f1C: 0.8946737064438373
+
+Wartości dla usa:
+precision: 0.8156618156618156
+recall: 0.997457627118644
+f1: 0.8974456728936332
+
+Wartości dla canada:
+precision: 0.5
+recall: 0.008771929824561403
+f1: 0.017241379310344827
+
+Wartości dla japan:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla uk:
+precision: 0.5555555555555556
+recall: 0.05952380952380952
+f1: 0.1075268817204301
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+ULICZNA
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.8192439862542955
+precisionC: 0.8205195258019525
+recallC: 0.9864101176185829
+f1C: 0.895849780207828
+
+Wartości dla usa:
+precision: 0.8207810320781032
+recall: 0.997457627118644
+f1: 0.9005355776587605
+
+Wartości dla canada:
+precision: 1.0
+recall: 0.02631578947368421
+f1: 0.05128205128205127
+
+Wartości dla japan:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla uk:
+precision: 0.75
+recall: 0.14285714285714285
+f1: 0.24
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+CZEBYSZEW
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.8103092783505155
+precisionC: 0.811424638678596
+recallC: 0.9991525423728813
+f1C: 0.8955563995442462
+
+Wartości dla usa:
+precision: 0.811424638678596
+recall: 0.9991525423728813
+f1: 0.8955563995442462
+
+Wartości dla canada:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla japan:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla uk:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0

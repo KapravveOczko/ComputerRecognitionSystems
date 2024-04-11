@@ -4,16 +4,29 @@ import org.example.vectorCreating.*;
 
 import java.util.ArrayList;
 
-import static org.example.constants.Constants.COUNTRIES;
-import static org.example.constants.Constants.EUCLIDEAN;
+import static org.example.constants.Constants.*;
 
 public class Main {
     public static void main(String[] args) {
 
         Main main = new Main();
 //        main.convertsTextsIntoVectorsFiles();
-        main.knnOperation();
+//        main.knnOperation(1,20,30);
+//        main.singleKnn(12, STREET, 10);
 //        main.countCountries(JsonConverter.loadDataFromJson("a.json"));
+
+
+        System.out.println("===============================================");
+        System.out.println("            " + 10 + " %         ");
+        System.out.println("             IV");
+        System.out.println("===============================================");
+        System.out.println("EUKLIDES");
+        main.singleKnn(17, EUCLIDEAN, 10);
+        System.out.println("ULICZNA");
+        main.singleKnn(12, STREET, 10);
+        System.out.println("CZEBYSZEW");
+        main.singleKnn(19, CZEBYSZEW, 10);
+
 
 
     }
@@ -49,34 +62,32 @@ public class Main {
         }
     }
 
-    private void singleKnn(){
+    private void singleKnn(int k, int metrics, int percentage){
         KNN knn = new KNN();
 
-        DataPreparer dp = new DataPreparer(JsonConverter.loadDataFromJson("a.json"), 30);
+        DataPreparer dp = new DataPreparer(JsonConverter.loadDataFromJson("a.json"), percentage);
         ArrayList<DataObject> testLearningVectors = dp.getLearningData();
         ArrayList<DataObject> testTestVectors = dp.getTestData();
 
-        QualityCalculator qualityCalculator = new QualityCalculator(knn.knn(testLearningVectors, testTestVectors, 12, EUCLIDEAN));
+        QualityCalculator qualityCalculator = new QualityCalculator(knn.knn(testLearningVectors, testTestVectors, k, metrics));
         qualityCalculator.showQualities();
     }
 
-    private void knnOperation() {
+    private void knnOperation(int kStart, int kEnd, int percentage) {
         KNN knn = new KNN();
 
-        DataPreparer dp = new DataPreparer(JsonConverter.loadDataFromJson("a.json"), 30);
+        DataPreparer dp = new DataPreparer(JsonConverter.loadDataFromJson("a.json"), percentage);
         ArrayList<DataObject> testLearningVectors = dp.getLearningData();
         ArrayList<DataObject> testTestVectors = dp.getTestData();
+        
 
-//        QualityCalculator qualityCalculator = new QualityCalculator(knn.knn(testLearningVectors, testTestVectors, 12, EUCLIDEAN));
-//        qualityCalculator.showQualities();
-
-        for (int i = 2; i< 4; i++){
+        for (int i = 1; i< 4; i++){
             System.out.println();
             System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
             System.out.println("            " + i + "           ");
             System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
             System.out.println();
-            for (int k = 2; k<21; k++){
+            for (int k = kStart; k<kEnd; k++){
                 System.out.println("==== k = " + k);
                 QualityCalculator qualityCalculator = new QualityCalculator(knn.knn(testLearningVectors, testTestVectors, k, i));
                 qualityCalculator.showQualities();

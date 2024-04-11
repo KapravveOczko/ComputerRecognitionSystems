@@ -1,0 +1,719 @@
+===============================================
+            10 %         
+===============================================
+EUKLIDES
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.8116838487972509
+precisionC: 0.8134495511810241
+recallC: 0.9958598921995354
+f1C: 0.8954596299849271
+
+Wartości dla usa:
+precision: 0.8129744651483782
+recall: 0.9983050847457627
+f1: 0.8961582350703691
+
+Wartości dla canada:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla japan:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla uk:
+precision: 1.0
+recall: 0.03571428571428571
+f1: 0.0689655172413793
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+ULICZNA
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.8116838487972509
+precisionC: 0.8148190100496687
+recallC: 0.9892996698822107
+f1C: 0.8936221176827724
+
+Wartości dla usa:
+precision: 0.8158443363446838
+recall: 0.9949152542372881
+f1: 0.8965253913707523
+
+Wartości dla canada:
+precision: 1.0
+recall: 0.017391304347826087
+f1: 0.03418803418803419
+
+Wartości dla japan:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla uk:
+precision: 0.5
+recall: 0.05952380952380952
+f1: 0.10638297872340424
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+CZEBYSZEW
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.8103092783505155
+precisionC: 0.8121923893041725
+recallC: 0.9924826335453729
+f1C: 0.8933318534096172
+
+Wartości dla usa:
+precision: 0.8131487889273357
+recall: 0.9957627118644068
+f1: 0.8952380952380953
+
+Wartości dla canada:
+precision: 1.0
+recall: 0.008695652173913044
+f1: 0.017241379310344827
+
+Wartości dla japan:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla uk:
+precision: 0.375
+recall: 0.03571428571428571
+f1: 0.06521739130434782
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+===============================================
+            20 %         
+===============================================
+EUKLIDES
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.8031604259704569
+precisionC: 0.805040571811859
+recallC: 0.9966385873732442
+f1C: 0.8906519167725896
+
+Wartości dla usa:
+precision: 0.8055267702936096
+recall: 0.9991431019708654
+f1: 0.8919487473704342
+
+Wartości dla canada:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla japan:
+precision: 0.125
+recall: 0.014925373134328358
+f1: 0.02666666666666667
+
+Wartości dla uk:
+precision: 0.7142857142857143
+recall: 0.024875621890547265
+f1: 0.04807692307692308
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+ULICZNA
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.8021298522844383
+precisionC: 0.8057558318733372
+recallC: 0.9919963292744582
+f1C: 0.8892291660486854
+
+Wartości dla usa:
+precision: 0.8072916666666666
+recall: 0.9961439588688946
+f1: 0.8918296892980437
+
+Wartości dla canada:
+precision: 0.6666666666666666
+recall: 0.009009009009009009
+f1: 0.017777777777777778
+
+Wartości dla japan:
+precision: 0.09090909090909091
+recall: 0.014925373134328358
+f1: 0.025641025641025644
+
+Wartości dla uk:
+precision: 0.4375
+recall: 0.03482587064676617
+f1: 0.06451612903225806
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+CZEBYSZEW
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.8017863277224322
+precisionC: 0.804016724326541
+recallC: 0.9948985191409941
+f1C: 0.8893304465586453
+
+Wartości dla usa:
+precision: 0.8049792531120332
+recall: 0.9974293059125964
+f1: 0.8909299655568312
+
+Wartości dla canada:
+precision: 0.6666666666666666
+recall: 0.009009009009009009
+f1: 0.017777777777777778
+
+Wartości dla japan:
+precision: 0.125
+recall: 0.014925373134328358
+f1: 0.02666666666666667
+
+Wartości dla uk:
+precision: 0.375
+recall: 0.014925373134328358
+f1: 0.028708133971291867
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+===============================================
+            30 %         
+===============================================
+EUKLIDES
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7939088619189375
+precisionC: 0.7952141325721747
+recallC: 0.9957845471457092
+f1C: 0.8842685970175971
+
+Wartości dla usa:
+precision: 0.7964499769479022
+recall: 0.9991324465008675
+f1: 0.8863519753719856
+
+Wartości dla canada:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla japan:
+precision: 0.3333333333333333
+recall: 0.044444444444444446
+f1: 0.0784313725490196
+
+Wartości dla uk:
+precision: 0.5454545454545454
+recall: 0.01929260450160772
+f1: 0.037267080745341616
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+ULICZNA
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7957407831463247
+precisionC: 0.7977430216049434
+recallC: 0.9930443160943999
+f1C: 0.8847439968237738
+
+Wartości dla usa:
+precision: 0.7997221579069229
+recall: 0.9988432620011567
+f1: 0.8882602545968882
+
+Wartości dla canada:
+precision: 0.75
+recall: 0.009584664536741214
+f1: 0.01892744479495268
+
+Wartości dla japan:
+precision: 0.3333333333333333
+recall: 0.05925925925925926
+f1: 0.10062893081761005
+
+Wartości dla uk:
+precision: 0.5
+recall: 0.03215434083601286
+f1: 0.060422960725075525
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+CZEBYSZEW
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7934508816120907
+precisionC: 0.7946688514599993
+recallC: 0.9955344385076321
+f1C: 0.8838328175031335
+
+Wartości dla usa:
+precision: 0.7959889349930843
+recall: 0.998842927393694
+f1: 0.885952533675433
+
+Wartości dla canada:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla japan:
+precision: 0.4
+recall: 0.058823529411764705
+f1: 0.10256410256410256
+
+Wartości dla uk:
+precision: 0.4444444444444444
+recall: 0.012903225806451613
+f1: 0.025078369905956115
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+===============================================
+            40 %         
+===============================================
+EUKLIDES
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7939206594538898
+precisionC: 0.7954248312233488
+recallC: 0.9961696329227369
+f1C: 0.8845506926870961
+
+Wartości dla usa:
+precision: 0.7964082196511829
+recall: 0.9984845204589738
+f1: 0.8860710854947167
+
+Wartości dla canada:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla japan:
+precision: 0.2857142857142857
+recall: 0.037037037037037035
+f1: 0.06557377049180328
+
+Wartości dla uk:
+precision: 0.5
+recall: 0.011876484560570071
+f1: 0.02320185614849188
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+ULICZNA
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7952945217241971
+precisionC: 0.7979275020701347
+recallC: 0.9945386650797893
+f1C: 0.8854501884418636
+
+Wartości dla usa:
+precision: 0.7997225593896307
+recall: 0.9984845204589738
+f1: 0.8881186212208743
+
+Wartości dla canada:
+precision: 0.5
+recall: 0.0024449877750611247
+f1: 0.004866180048661801
+
+Wartości dla japan:
+precision: 0.3
+recall: 0.055900621118012424
+f1: 0.09424083769633507
+
+Wartości dla uk:
+precision: 0.4090909090909091
+recall: 0.021377672209026127
+f1: 0.040632054176072234
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+CZEBYSZEW
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7937489266701013
+precisionC: 0.7952520765773979
+recallC: 0.996380535553787
+f1C: 0.8845269779030241
+
+Wartości dla usa:
+precision: 0.7962707182320442
+recall: 0.9984845204589738
+f1: 0.885985976371146
+
+Wartości dla canada:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla japan:
+precision: 0.3
+recall: 0.037037037037037035
+f1: 0.06593406593406594
+
+Wartości dla uk:
+precision: 0.36363636363636365
+recall: 0.009501187648456057
+f1: 0.01851851851851852
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+===============================================
+            50 %         
+===============================================
+EUKLIDES
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7918670146998215
+precisionC: 0.7935983695368073
+recallC: 0.9962161477360173
+f1C: 0.8834384825017381
+
+Wartości dla usa:
+precision: 0.7943654191410027
+recall: 0.9982644914960084
+f1: 0.8847189110205339
+
+Wartości dla canada:
+precision: 1.0
+recall: 0.0020920502092050207
+f1: 0.0041753653444676405
+
+Wartości dla japan:
+precision: 0.2
+recall: 0.023809523809523808
+f1: 0.0425531914893617
+
+Wartości dla uk:
+precision: 0.5555555555555556
+recall: 0.009041591320072333
+f1: 0.017793594306049824
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.3333333333333333
+recall: 0.006172839506172839
+f1: 0.012121212121212121
+
+ULICZNA
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7922791592251683
+precisionC: 0.7953983850938118
+recallC: 0.9926874426343107
+f1C: 0.8831589362546999
+
+Wartości dla usa:
+precision: 0.797250381891404
+recall: 0.9970475859673498
+f1: 0.8860251562620572
+
+Wartości dla canada:
+precision: 0.8
+recall: 0.008333333333333333
+f1: 0.016494845360824743
+
+Wartości dla japan:
+precision: 0.2558139534883721
+recall: 0.052132701421800945
+f1: 0.08661417322834646
+
+Wartości dla uk:
+precision: 0.36363636363636365
+recall: 0.014492753623188406
+f1: 0.027874564459930314
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.375
+recall: 0.018518518518518517
+f1: 0.03529411764705882
+
+CZEBYSZEW
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7913174886660256
+precisionC: 0.7933521242790403
+recallC: 0.9975923547207878
+f1C: 0.8838264089842206
+
+Wartości dla usa:
+precision: 0.7939837174003036
+recall: 0.9986115931968067
+f1: 0.8846183411484357
+
+Wartości dla canada:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla japan:
+precision: 0.18518518518518517
+recall: 0.023809523809523808
+f1: 0.04219409282700422
+
+Wartości dla uk:
+precision: 0.2
+recall: 0.0018083182640144665
+f1: 0.003584229390681003
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+===============================================
+            60 %         
+===============================================
+EUKLIDES
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7892386949055524
+precisionC: 0.7899941602269475
+recallC: 0.9969834560612095
+f1C: 0.8815008100294298
+
+Wartości dla usa:
+precision: 0.7906709558823529
+recall: 0.998693948628646
+f1: 0.8825905739018917
+
+Wartości dla canada:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla japan:
+precision: 0.3888888888888889
+recall: 0.023333333333333334
+f1: 0.04402515723270441
+
+Wartości dla uk:
+precision: 0.4
+recall: 0.006024096385542169
+f1: 0.011869436201780416
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.5
+recall: 0.004761904761904762
+f1: 0.009433962264150945
+
+ULICZNA
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7885518030910131
+precisionC: 0.7911837014066807
+recallC: 0.9912915095443995
+f1C: 0.880005153368586
+
+Wartości dla usa:
+precision: 0.7930835068239649
+recall: 0.9956439668941484
+f1: 0.8828944827142213
+
+Wartości dla canada:
+precision: 0.4444444444444444
+recall: 0.007259528130671506
+f1: 0.014285714285714285
+
+Wartości dla japan:
+precision: 0.3170731707317073
+recall: 0.04318936877076412
+f1: 0.07602339181286549
+
+Wartości dla uk:
+precision: 0.4
+recall: 0.021052631578947368
+f1: 0.039999999999999994
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+CZEBYSZEW
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.7879793932455639
+precisionC: 0.7899708099039818
+recallC: 0.9968321141917709
+f1C: 0.8814271142799768
+
+Wartości dla usa:
+precision: 0.790435682262329
+recall: 0.9978232477144101
+f1: 0.8821039127645927
+
+Wartości dla canada:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla japan:
+precision: 0.3333333333333333
+recall: 0.023255813953488372
+f1: 0.04347826086956522
+
+Wartości dla uk:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0

@@ -1,0 +1,120 @@
+===============================================
+            10 %         
+             I
+===============================================
+EUKLIDES
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.8116838487972509
+precisionC: 0.8134495511810241
+recallC: 0.9958598921995354
+f1C: 0.8954596299849271
+
+Wartości dla usa:
+precision: 0.8129744651483782
+recall: 0.9983050847457627
+f1: 0.8961582350703691
+
+Wartości dla canada:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla japan:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla uk:
+precision: 1.0
+recall: 0.03571428571428571
+f1: 0.0689655172413793
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+ULICZNA
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.8116838487972509
+precisionC: 0.8148190100496687
+recallC: 0.9892996698822107
+f1C: 0.8936221176827724
+
+Wartości dla usa:
+precision: 0.8158443363446838
+recall: 0.9949152542372881
+f1: 0.8965253913707523
+
+Wartości dla canada:
+precision: 1.0
+recall: 0.017391304347826087
+f1: 0.03418803418803419
+
+Wartości dla japan:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla uk:
+precision: 0.5
+recall: 0.05952380952380952
+f1: 0.10638297872340424
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+CZEBYSZEW
+Wartości miar jakości klasyfikacji:
+
+Wartośći ogólne:
+accuracy: 0.8103092783505155
+precisionC: 0.8121923893041725
+recallC: 0.9924826335453729
+f1C: 0.8933318534096172
+
+Wartości dla usa:
+precision: 0.8131487889273357
+recall: 0.9957627118644068
+f1: 0.8952380952380953
+
+Wartości dla canada:
+precision: 1.0
+recall: 0.008695652173913044
+f1: 0.017241379310344827
+
+Wartości dla japan:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla uk:
+precision: 0.375
+recall: 0.03571428571428571
+f1: 0.06521739130434782
+
+Wartości dla france:
+precision: 0.0
+recall: 0.0
+f1: 0.0
+
+Wartości dla west-germany:
+precision: 0.0
+recall: 0.0
+f1: 0.0
