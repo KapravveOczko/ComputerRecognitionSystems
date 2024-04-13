@@ -7,6 +7,8 @@
 \usepackage{listings}
 \usepackage{listingsutf8}
 \usepackage{longtable}
+\usepackage{float}
+
 %{Informatyka stosowana 2024, I st., semestr VI}
 
 \lstset{
@@ -755,7 +757,7 @@ Aby móc poprawnie wykorzystać klasyfikator knn potrzebujemy dwóch zbiorów da
 
 \newpage
 
-\noindent Poniżej znajduje się procentowy udział każdego kraju w zbiorze uczącym z wyłączeniem tekstów zawierających odniesienia do krajów z poza badanego zakresu.
+\noindent Poniżej znajduje się procentowy udział każdego kraju w zbiorze uczącym z wyłączeniem tekstów zawierających odniesienia do krajów spoza badanego zakresu.
 
 \begin{itemize}
     \item USA: 79,34\%
@@ -768,20 +770,20 @@ Aby móc poprawnie wykorzystać klasyfikator knn potrzebujemy dwóch zbiorów da
 
 \noindent Mając wyżej wymienione fakty na uwadze utworzone zostały dwa zbioru przeznaczone do nauki jak i testowania, zbiór testowy składa się z 30\% wszystkich tekstów a tekst uczący z 70\%, stosunek ten poddany będzie dalszemu rozpatrzeniu w dalszej części sprawozdania. \\
 
-\noindent Ważną informacją niezmienną dla każdego z eksperymentów jest fakt że wczytywane dane są niezmienne, rozumiemy przez to stałą kolejność wczytywanych wektorów cech a co za tym idzie każdorazowe uruchomienie eksperymentu zwraca identyczne wyniki.
+\noindent Ważną informacją niezmienną dla każdego z eksperymentów jest fakt, że wczytywane dane są niezmienne, rozumiemy przez to stałą kolejność wczytywanych wektorów cech a co za tym idzie każdorazowe uruchomienie eksperymentu zwraca identyczne wyniki.
 
 \subsection*{Wyniki klasyfikacji}
 
 \subsubsection*{Badanie wpływu wartości k dla każdej z metryk}
 
-W celu zbadania skuteczności utworzonego klasyfikatora, przeprowadzone zostaną eksperymenty dla każdej z metryk odległości (patrz sekcja 4 sprawozdania). Głównym celem tych eksperymentów jest oszacowanie, która metryka najlepiej sprawdzi się w kontekście klasyfikacji danych. Eksperymenty będą polegać na dopasowaniu wartości parametru k w metodzie k-najbliższych sąsiadów w taki sposób, aby uzyskać jak najlepsze wyniki klasyfikacji. \\
+W celu zbadania skuteczności utworzonego klasyfikatora, przeprowadzone zostaną eksperymenty dla każdej z metryk odległości (patrz sekcja 4 sprawozdania). Głównym celem tych eksperymentów jest wyznaczenie, która metryka najlepiej sprawdzi się w kontekście klasyfikacji danych. Eksperymenty będą polegać na dopasowaniu wartości parametru k w metodzie k-najbliższych sąsiadów w taki sposób, aby uzyskać jak najlepsze wyniki klasyfikacji. \\
 
 \noindent Oczekuje się, że wyniki eksperymentów pozwolą na wybór optymalnej metryki odległości oraz odpowiedniej wartości parametru k, co przyczyni się do uzyskania wysokiej skuteczności klasyfikatora na danych testowych.
 
 
 \input{table_euclides.tex}
 \input{table_street.tex}
-\input{ksr/table_czebyszew}
+\input{table_czebyszew.tex}
 
 \subsubsection*{Podsumowanie eksperymentu}
 
@@ -789,228 +791,69 @@ W celu zbadania skuteczności utworzonego klasyfikatora, przeprowadzone zostaną
 
 \input{table_metricks_best}
 
-Przyglądając się wynikom eksperymentu możemy zauważyć, że uzyskane wyniki są bez wątpienia zależne od wartości k. Dodatkowo uzyskane wyniki rosną wraz z wartością parametru, ale tylko do pewnego momentu, po uzyskaniu maksymalnej wartości dokładności wartość tej miary spada i mimo niewielkich wachań nigdy nie uzyskuje wyników wyższych niż wspomniana wcześniej wartość. \\
+\noindent Przyglądając się wynikom eksperymentu możemy zauważyć, że uzyskane wyniki są bez wątpienia zależne od wartości k. Dodatkowo uzyskane wyniki rosną wraz z wartością parametru, ale tylko do pewnego momentu, po uzyskaniu maksymalnej wartości dokładności wartość tej miary spada i mimo niewielkich wahań nigdy nie uzyskuje wyników wyższych niż wspomniana wcześniej wartość. \\
 
-\noindent Mimo że uzyskane wartości miar jakości są bardzo podobne dla każdej z metryk to najwyższą dokładność uzyskaliśmy dla metryki Ulicznej oraz k wynoszącym 12. \\
+\noindent Mimo że uzyskane wartości miar jakości są bardzo podobne dla każdej z metryk to najwyższą dokładność uzyskaliśmy dla metryki Ulicznej przy k wynoszącym 12. \\
+
+\newpage
 
 \noindent Kolejnym faktem, który należy wypunktować jest powtażająca się przewaga wartości czułości nad miarą precyzji. Jeśli precision jest niższa niż recall, to model częściej popełnia błędy typu fałszywie pozytywne niż fałszywie negatywne. Innymi słowy, jest bardziej skłonny do błędnie identyfikowania wyników jako pozytywne, nawet gdy są one fałszywe. Może to oznaczać, że model jest zbyt optymistyczny w klasyfikowaniu przypadków. \\
 
-\noindent Należy również zauważyć że istnieje wiele wartości wynoszących 0, bądź też wartości do 0 zbliżone, może to być spowodawane tym, że niektóre kraje są znacznie mniej licznie reprezentowane niż inne. W przypadku tych słabo reprezentowanych klas, model może mieć trudności w wyuczeniu się cech charakterystycznych dla tych klas, co prowadzi do niskich wartości miar jakości klasyfikacji.
+\noindent Należy również zauważyć, że istnieje wiele wartości wynoszących 0 bądź też wartości do 0 zbliżone, może to być spowodowane tym, że niektóre kraje są znacznie mniej licznie reprezentowane niż inne. W przypadku tych słabo reprezentowanych klas, model może mieć trudności w wyuczeniu się cech charakterystycznych dla tych klas, co prowadzi do niskich wartości miar jakości klasyfikacji.
 
 \subsubsection*{Badanie wpływu rozkładu danych}
 
 Przez rozkład danych biorących udział w badaniu rozumiemy jaką część danych, które mamy do dyspozycji bierzemy jako dane testowe a jakie dane uczące. Eksperymentowi poddane zostaną wszystkie metryki. Nadal operować będziemy na wcześniej przygotowanym zestawie danych. Podczas poprzednich badań przyjęty podział wyglądał następująco: 30\% danych testowych do 70\% danych uczących. Teraz pod rozważania poddane zostaną inne rozkłady między zbiorami danych, pozostałe wartości pozostają bez zmian i wyglądają następująco: \\
 
-\noindent Dla metryki Euklidesowej wartość k wynosi 17, dla metryki Ulicznej k = 12 a dla metryki Czebyszewa przyjęte zostało k równe 19. Są to wartości dla których w poprzednim eksperymencie uzyskane wyniki były najwyższe, pozwoli to na dalsze pogłębianie poszukiwań najlepszych kombinacji parametrów\\
+\noindent Dla metryki Euklidesowej wartość k wynosi 17, dla metryki Ulicznej k = 12 a dla metryki Czebyszewa przyjęte zostało k równe 19. Są to wartości, dla których w poprzednim eksperymencie uzyskane wyniki były najwyższe, pozwoli to na dalsze pogłębianie poszukiwań najlepszych kombinacji parametrów.\\
 
-\noindent Z racji na fakt, że przyjęty zbiór danych nie pozwala na podział równy, wartości zostaną zaokrąglone w dół w kierunku zbioru testowego. Poniższa tabela zawiera wyniki eksperymentu: 
+\noindent Z racji na fakt, że przyjęty zbiór danych nie pozwala na podział równy, wartości zostaną zaokrąglone w dół w kierunku zbioru testowego. Poniższe tabele zawierają wyniki eksperymentu dla każdej z metryk z uwzględnieniem wartości jednostkowych dla każdego z badanych krajów:
 
-\begin{table}[httb]
-    \centering
-\caption{Wyniki miar jakości w zależności od udziału zbioru testowego \\}
-\label{tab:my_label}
-    \begin{tabular}{|c|c|c|c|} \hline 
-         \begin{tabular}{@{}c@{}} Procentowy udziału \\ tekstów testowych \end{tabular}&  Metryka Euklidesowa& Metryka Uliczna& Metryka Czebyszewa\\ \hline 
-         9\%& \begin{tabular}{@{}c@{}}
-         accuracy: 0.167 \\
-            precision: 0.222 \\
-            recall: 0.556 \\
-            f1: 0.317\end{tabular} & \begin{tabular}{@{}c@{}}
-            accuracy: 0.056 \\
-            precision: 0.200 \\
-            recall: 0.333 \\
-            f1: 0.250\end{tabular}  & 
-            \begin{tabular}{@{}c@{}}
-            accuracy: 0.111 \\
-            precision: 0.156 \\
-            recall: 0.333 \\
-            f1: 0.212\end{tabular} \\ \hline 
-
-
-            
-         15\%& \begin{tabular}{@{}c@{}}
-         accuracy: 0.200 \\
-            precision: 0.292 \\
-            recall: 0.400 \\
-            f1: 0.337\end{tabular} & \begin{tabular}{@{}c@{}}
-            accuracy: 0.100 \\
-            precision: 0.148 \\
-            recall: 0.200 \\
-            f1: 0.170\end{tabular}  & 
-            \begin{tabular}{@{}c@{}}
-            accuracy: 0.133 \\
-            precision: 0.267 \\
-            recall: 0.500 \\
-            f1: 0.348\end{tabular} \\ \hline 
-
-
-            
-         21\%& \begin{tabular}{@{}c@{}}
-         accuracy: 0.190 \\
-            precision: 0.253 \\
-            recall: 0.353 \\
-            f1: 0.295\end{tabular} & \begin{tabular}{@{}c@{}}
-            accuracy: 0.119 \\
-            precision: 0.143 \\
-            recall: 0.137 \\
-            f1: 0.140\end{tabular}  & 
-            \begin{tabular}{@{}c@{}}
-            accuracy: 0.119 \\
-            precision: 0.240 \\
-            recall: 0.479 \\
-            f1: 0.320\end{tabular} \\ \hline 
-
-
-            
-         29\%& \begin{tabular}{@{}c@{}}
-         accuracy: 0.200 \\
-            precision: 0.238 \\
-            recall: 0.399 \\
-            f1: 0.298\end{tabular} & \begin{tabular}{@{}c@{}}
-            accuracy: 0.183\\
-            precision: 0.191 \\
-            recall: 0.208 \\
-            f1: 0.200\end{tabular}  & 
-            \begin{tabular}{@{}c@{}}
-            accuracy: 0.250 \\
-            precision: 0.271 \\
-            recall: 0.402 \\
-            f1: 0.324.\end{tabular} \\ \hline 
-
-
-            
-         44\%& \begin{tabular}{@{}c@{}}
-         accuracy: 0.156 \\
-            precision: 0.169 \\
-            recall: 0.225 \\
-            f1: 0.193\end{tabular} & \begin{tabular}{@{}c@{}}
-            accuracy: 0.156 \\
-            precision: 0.173 \\
-            recall: 0.197 \\
-            f1: 0.184\end{tabular}  & 
-            \begin{tabular}{@{}c@{}}
-            accuracy: 0.189 \\
-            precision: 0.208 \\
-            recall: 0.270 \\
-            f1: 0.235\end{tabular} \\ \hline 
-
-
-            
-         59\%& \begin{tabular}{@{}c@{}}
-         accuracy: 0.150 \\
-            precision: 0.167 \\
-            recall: 0.246 \\
-            f1: 0.199\end{tabular} & \begin{tabular}{@{}c@{}}
-            accuracy: 0.192 \\
-            precision: 0.199 \\
-            recall: 0.221 \\
-            f1: 0.209\end{tabular}  & 
-            \begin{tabular}{@{}c@{}}
-            accuracy: 0.192 \\
-            precision: 0.225 \\
-            recall: 0.263 \\
-            f1: 0.243\end{tabular} \\ \hline 
-    \end{tabular}
-    
-\end{table}
-
-\newpage
+\input{table_p_euclides.tex}
+\input{table_p_street.tex}
+\input{table_p_czebyszew.tex}
 
 \subsubsection*{Podsumowanie eksperymentu}
 
-Przeprowadzony eksperyment wykazał, że najlepsze wyniki klasyfikacji uzyskano dla proporcji 10\% danych testowych do 90\% danych uczących. W tym przypadku uzyskaliśmy precyzję na poziomie 81.17\% dla metryki Euklidesowej, dla metryki Ulicznej wartość tej miary jest tożsama dla metryki Czebyszewa wartość ta wynosi natomiast 81.03\% . Wyniki te sugerują, że w kontekście analizowanego zbioru danych ta proporcja podziału danych jest optymalna, pozwalając na osiągnięcie najlepszej jakości klasyfikacji. \\
+\noindent Przeprowadzony eksperyment wykazał, że najlepsze wyniki klasyfikacji uzyskano dla proporcji 10\% danych testowych do 90\% danych uczących. W tym przypadku uzyskaliśmy precyzję na poziomie 81.17\% dla metryki Euklidesowej, dla metryki Ulicznej wartość tej miary jest tożsama dla metryki Czebyszewa wartość ta wynosi natomiast 81.03\% . Wyniki te sugerują, że w kontekście analizowanego zbioru danych ta proporcja podziału danych jest optymalna, pozwalając na osiągnięcie najlepszej jakości klasyfikacji. \\
 
-\noindent Warto tutaj zaznaczyć że mimo osiągnięcia tej samej dokładności metryka Euklidesa posiada nieco wyższą wartrość miary F1, różnica tych wartości (0,895459629984927 dla metryki Euklidesa oraz 0,893622118 dla metryki Ulicznej) wynosi dokładnie 0,001837512 tak więc w przypadku naszego klasyfikatora metryka Euklidesa zwraca najlepsze wyniki.
+\noindent Warto tutaj zaznaczyć, że mimo osiągnięcia tej samej dokładności metryka Euklidesa posiada nieco wyższą wartość miary F1, różnica tych wartości \\ (0,895459629984927 dla metryki Euklidesa oraz 0,893622118 dla metryki Ulicznej) wynosi dokładnie 0,001837512 tak więc w przypadku naszego klasyfikatora metryka Euklidesa zwraca najlepsze wyniki. \\
 
 \noindent Dodatkowo możemy zauważyć, że wyższy procentowy udział danych testowych do uczących powoduje znaczący spadek w jakości klasyfikacji, jedynym odstępstwem od tej normy jest metryka uliczna, która nawet dla 60\% udziału danych testowych radzi sobie lepiej od pozostałych metryk. \\
 
 
 \subsubsection*{Badanie wpływu konkretnych cech}
 
-W celu zbadania tego, jak konkretne cechy wpływają na otrzymywany wynik, utworzono 4 grupy cech, dla których wszystkie pozostałe zmienne pozostają takie same. Wykonane zostaną kolejno badania dla każdej z badanych metryk. Dla każdej z nich udział danych testowych do danych uczących wynosi 10\%. Dodatkowo dla każdej z nich zastosowana została wartość k, zwracająca najlepsze wartości. Czyli dla metryki Euklidesowej wartość ta wynosi 17, dla metryki Ulicznej 12, a dla metryki Czebyszewa 19."
+\noindent W celu zbadania tego, jak konkretne cechy wpływają na otrzymywany wynik, utworzono 4 grupy cech, dla których wszystkie pozostałe zmienne pozostają takie same. Wykonane zostaną kolejno badania dla każdej z badanych metryk. Dla każdej z nich udział danych testowych do danych uczących wynosi 10\%. Dodatkowo dla każdej z nich zastosowana została wartość k, zwracająca najlepsze wartości. Czyli dla metryki Euklidesowej wartość ta wynosi 17, dla metryki Ulicznej 12, a dla metryki Czebyszewa 19." \\
 
 \noindent \textbf{I grupa: } pierwszą z utworzonych grup stanowi zbiór cech z wyłączeniem cech słownikowych, czyli nawiązując do drugiej sekcji dokumentu będą to cechy bez cech 1-3. \\
 
-\noindent \textbf{II grupa: } kolejną grupę stanowić będą wszystkie cechy poza cechami 4, 5 oraz 6 (ponownie nawiązując do drugiej sekcji sprawozdania). Wyłączone cechy muwią o ilości słów spełniających zadane kryteria. \\
+\noindent \textbf{II grupa: } kolejną grupę stanowić będą wszystkie cechy poza cechami 4, 5 oraz 6 (ponownie nawiązując do drugiej sekcji sprawozdania). Wyłączone cechy mówią o ilości słów spełniających zadane kryteria. \\
 
 \noindent \textbf{III grupa: } trzecią grupę stanowić będą cechy 1-6 oraz 9 i 10, cechy wyłączone (7,8) mówią o długościach słów. \\
 
 \noindent \textbf{IV grupa: } ostatnia grupa złożona jest z cech z wyłączeniem cech 9 oraz 10. W skład ten wchodzi więc cechy zliczająca ilość znaków w najdłuższym słowie oraz cecha zliczająca wystąpienia słów zawierających. "\textendash".
 
-warto wspomnieć, że podczas badania wpływu poszczególnych cech należy je wyłączyć z eksperymentu. Jest to spowodowane faktem, że klasyfikator, działając na małej liczbie cech, może napotkać znaczne trudności w odpowiednim opisaniu tekstów. \\
+\noindent warto wspomnieć, że podczas badania wpływu poszczególnych cech należy je wyłączyć z eksperymentu. Jest to spowodowane faktem, że klasyfikator, działając na małej liczbie cech, może napotkać znaczne trudności w odpowiednim opisaniu tekstów. \\
 
-\noindent Stosując metodę wyłączenia badanych cech, będziemy mogli ocenić, czy klasyfikator, działający bez wspomnianych cech, zwraca gorsze wyniki. W takim przypadku można wnioskować, że te cechy mają pozytywny wpływ na wyniki klasyfikacji. Jeśli otrzymane wyniki pozostają niezmienione, można zakładać, że badane cechy nie mają wpływu na wyniki algorytmu. Natomiast, jeśli otrzymane wyniki są wyższe niż te uzyskane przy pracy klasyfikatora na wszystkich cechach, można przyjąć, że badane cechy szkodzą klasyfikatorowi.
+\noindent Stosując metodę wyłączenia badanych cech, będziemy mogli ocenić, czy klasyfikator, działający bez wspomnianych cech, zwraca gorsze wyniki. W takim przypadku można wnioskować, że te cechy mają pozytywny wpływ na wyniki klasyfikacji. Jeśli otrzymane wyniki pozostają niezmienione, można zakładać, że badane cechy nie mają wpływu na wyniki algorytmu. Natomiast, jeśli otrzymane wyniki są wyższe niż te uzyskane przy pracy klasyfikatora na wszystkich cechach, można przyjąć, że badane cechy szkodzą klasyfikatorowi. \\
 
-\begin{table}[htbp]
-    \centering
-    \caption{Wyniki miar jakości w zależności od wybranych cech dla każdej z wybranych metryk \\}
-    \label{tab:my_label}
-    \begin{tabular}{|c|c|c|c|} \hline  
-         Zestaw cech & Metryka Euklidesowa & Metryka Uliczna & Metryka Czebyszewa \\ \hline  
-         I & \begin{tabular}{@{}c@{}}accuracy: 0.750 \\
-            precision: 0.817 \\
-            recall: 0.825 \\
-            f1: 0.821\end{tabular} & 
-            \begin{tabular}{@{}c@{}}accuracy: 0.750 \\
-            precision: 0.817 \\
-            recall: 0.825 \\
-            f1: 0.821\end{tabular} &
-            \begin{tabular}{@{}c@{}}accuracy: 0.267 \\
-            precision: 0.352 \\
-            recall: 0.796 \\
-            f1: 0.488\end{tabular} \\ \hline 
-         II & \begin{tabular}{@{}c@{}}accuracy: 0.150 \\
-            precision: 0.175 \\
-            recall: 0.204 \\
-            f1: 0.188\end{tabular} & 
-            \begin{tabular}{@{}c@{}}accuracy: 0.167 \\
-            precision: 0.216 \\
-            recall: 0.236 \\
-            f1: 0.226\end{tabular} &
-            \begin{tabular}{@{}c@{}}accuracy: 0.167 \\
-            precision: 0.216 \\
-            recall: 0.236 \\
-            f1: 0.226\end{tabular} \\ \hline  
-         III & \begin{tabular}{@{}c@{}}accuracy: 0.217 \\
-            precision: 0.280 \\
-            recall: 0.326 \\
-            f1: 0.301\end{tabular} & 
-            \begin{tabular}{@{}c@{}}accuracy: 0.217 \\
-            precision: 0.280 \\
-            recall: 0.326 \\
-            f1: 0.301\end{tabular} &
-            \begin{tabular}{@{}c@{}}accuracy: 0.167 \\
-            precision: 0.251 \\
-            recall: 0.298 \\
-            f1: 0.273\end{tabular} \\ \hline  
-         IV & \begin{tabular}{@{}c@{}}accuracy: 0.183 \\
-            precision: 0.232 \\
-            recall: 0.389 \\
-            f1: 0.291\end{tabular} & 
-            \begin{tabular}{@{}c@{}}accuracy: 0.183 \\
-            precision: 0.236 \\
-            recall: 0.389 \\
-            f1: 0.294\end{tabular} &
-            \begin{tabular}{@{}c@{}}accuracy: 0.150 \\
-            precision: 0.205 \\
-            recall: 0.386 \\
-            f1: 0.268\end{tabular} \\ \hline  
-    \end{tabular}
-\end{table}
 
-\newpage
+\input{table_c_euclides.tex}
+\input{table_c_street.tex}
+\input{table_c_czebyszew.tex}
 
 \subsubsection*{Podsumowanie eksperymentu}
 
 W poniższej tabeli znajdują się wyniki dokładności dla każdej z grup, wraz z różnicą między najlepszym otrzymanym wynikiem dla każdej z metryk uzyskanym w poprzednim eksperymencie. Wyniki zostały zapisane z dużą dokładnością po przecinku ze względu na to, że różnice między nimi są bardzo niewielkie. \\
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \caption{Wyniki dokładności dla różnych grup cech}
     \label{tab:wyniki}
     \begin{tabular}{|c|c|c|c|} \hline 
         & Metryka Euklidesowa & Metryka Uliczna & Metryka Czebyszewa \\ \hline 
-        \begin{tabular}{@{}c@{}}Wyniki dokładności uzyskane\\ w poprzedniej subsekcji\end{tabular} & 0.811683849 & 0.811683849 & 0.810309278 \\ \hline 
+        \begin{tabular}{@{}c@{}}Wyniki dokładności \\ uzyskane w \\ poprzedniej subsekcji\end{tabular} & 0.811683849 & 0.811683849 & 0.810309278 \\ \hline 
         I & 0.810996564 & 0.810309278 & 0.810309278 \\ \hline 
         $\Delta$ I & 0.000687285 & 0.00137457 & 0 \\ \hline 
         II & 0.813058419 & 0.819243986 & 0.810309278 \\ \hline 
@@ -1028,7 +871,7 @@ W poniższej tabeli znajdują się wyniki dokładności dla każdej z grup, wraz
 
 \noindent Analiza wyników wskazuje, że niektóre cechy mogą mieć zarówno pozytywny, jak i negatywny wpływ na dokładność klasyfikacji. Na przykład, dla metryki Euklidesowej, wyłączenie niektórych cech może prowadzić do poprawy dokładności klasyfikacji, podczas gdy dla metryki Ulicznej takie wyłączenie może prowadzić do pogorszenia wyników. \\
 
-\noindent Należy również zwrócić uwagę na fakt, że metryka Czebyszewa wydaje się być najmniej wrażliwa na zmiany w wykorzystywanych cechach. Dodatkowo, minimalnie negatywny wpływ cech słownikowych (grupa I) może być spowodowany prawdopodobnie wykorzystaniem dolara jako waluty uniwersalnej w większości tekstów. Z tego powodu cecha 2 może przyjmować wartości na rzecz USA. \\
+\noindent Należy również zwrócić uwagę na fakt, że metryka Czebyszewa wydaje się najmniej wrażliwa na zmiany w wykorzystywanych cechach. Dodatkowo minimalnie negatywny wpływ cech słownikowych (grupa I) może być spowodowany prawdopodobnie wykorzystaniem dolara jako waluty uniwersalnej w większości tekstów. Z tego powodu cecha 2 może przyjmować wartości na rzecz USA. \\
 
 \noindent Warto również zauważyć, że różnice między wynikami dla poszczególnych grup cech są nadzwyczaj małe, co może świadczyć o subtelnych wpływach poszczególnych cech na proces klasyfikacji. \\
 
@@ -1041,11 +884,174 @@ W poniższej tabeli znajdują się wyniki dokładności dla każdej z grup, wraz
 
 Już na pierwszy rzut oka widzimy, że przygotowany program działa zasadniczo poprawnie, najwyższa osiągnięta dokładność wyniosła 81.17\% (wynik uzyskany dla Metryki Euklidesowej, k = 17 oraz 10\% udziale danych testowych do uczących). Poniżej raz jeszcze przedstawione zostały najwyższe wyniki uzyskane dla każdej z metryk z uwzględnieniem wartości jednostkowych dla każdego z badanych krajów. \\
 
-\input{table_results}
+\begin{table}[H]
+    \centering
+    \caption{results}
+    \label{tab:my_label}
+    \begin{tabular}{|c|c|c|c|c|c|} 
+        \hline 
+        \multirow{2}{*}{k} & \multirow{2}{*}{Wartości ogólne} & \multicolumn{4}{|c|}{Wartości jednostkowe} \\ 
+        \cline{3-6}
+         & & kraj & precyzja & czułość & f1 \\ 
+        \hline
+        
+    17 &  
+        \begin{tabular}{@{}c@{}}
+        accuracy: 0.\\ 
+        precisionC: 0.\\
+        recallC: 0.\\ 
+        f1C: 0.
+        \end{tabular} & 
+        \begin{tabular}{@{}c@{}}
+        usa: \\ 
+        canada: \\
+        japan: \\
+        uk: \\  
+        france: \\
+        west-germany \\
+        \end{tabular} &
+        \begin{tabular}{@{}c@{}}
+        \\
+        0. \\ 
+        0. \\
+        0. \\
+        0. \\  
+        0. \\
+        0. \\
+        \\
+        \end{tabular} &   
+        \begin{tabular}{@{}c@{}}
+        \\
+        0. \\ 
+        0. \\
+        0. \\
+        0. \\  
+        0. \\
+        0. \\
+        \\
+        \end{tabular} & 
+        \begin{tabular}{@{}c@{}}
+        \\
+        0. \\ 
+        0. \\
+        0. \\
+        0. \\  
+        0. \\
+        0. \\
+        \\
+        \end{tabular} \\
+        \hline
 
-\noindent Jednakowoż mimo początkowo dobrze prezentującego się wyniku należu względnić fakt że klasyfikując każdy z artykółów jako należący do kalsy use uzyskali byśmy dokładność na poziomie 79.34\% jest to spowodowane znaczącą przewagą testów należących do klasu usa. Tak więc nasz klasyfikator osiągnął dokładność wyższą o zaledwie 1.83 punkta procentowego. \\
+ 12 &  
+    \begin{tabular}{@{}c@{}} 
+    accuracy: 0.\\ 
+    precisionC: 0.\\
+    recallC: 0.\\ 
+    f1C: 0.
+    \end{tabular} & 
+    \begin{tabular}{@{}c@{}} 
+    \\
+    usa: \\ 
+    canada: \\
+    japan: \\
+    uk: \\  
+    france: \\
+    west-germany \\
+    \\
+    \end{tabular} &
+    
+    \begin{tabular}{@{}c@{}} 
+    \\
+    0. \\ 
+    0. \\
+    0. \\
+    0. \\  
+    0. \\
+    0. \\
+    \\
+    \end{tabular} &   
+    
+    \begin{tabular}{@{}c@{}} 
+    \\
+    0. \\ 
+    0. \\
+    0. \\
+    0. \\  
+    0. \\
+    0. \\
+    \\
+    \end{tabular} & 
+    
+    \begin{tabular}{@{}c@{}} 
+    \\
+    0. \\ 
+    0. \\
+    0. \\
+    0. \\  
+    0. \\
+    0. \\
+    \\ 
+    \end{tabular} \\
+    \hline
+    
+    19 &  
+    \begin{tabular}{@{}c@{}} 
+    accuracy: 0.\\ 
+    precisionC: 0.\\
+    recallC: 0.\\ 
+    f1C: 0.
+    \end{tabular} & 
+    \begin{tabular}{@{}c@{}} 
+    \\
+    usa: \\ 
+    canada: \\
+    japan: \\
+    uk: \\  
+    france: \\
+    west-germany \\
+    \\
+    \end{tabular} &
+    
+    \begin{tabular}{@{}c@{}} 
+    \\
+    0. \\ 
+    0. \\
+    0. \\
+    0. \\  
+    0. \\
+    0. \\
+    \\
+    \end{tabular} &   
+    
+    \begin{tabular}{@{}c@{}} 
+    \\
+    0. \\ 
+    0. \\
+    0. \\
+    0. \\  
+    0. \\
+    0. \\
+    \\
+    \end{tabular} & 
+    
+    \begin{tabular}{@{}c@{}} 
+    \\
+    0. \\ 
+    0. \\
+    0. \\
+    0. \\  
+    0. \\
+    0. \\
+    \\ 
+    \end{tabular} \\
+    \hline
+    \end{tabular}  
+\end{table}
 
-\noindent Warte wspomniena jest również to że podczas pracy nad implementacją zliczania wartości cech 1-3 (cech słownikowych) możliwe okazało się uproszczenie wzoru na bazie, którego wartości te są zliczane (wzór (1)) w wyniku czego zastąpiony on został w implementacji przez poniższy wzór (53): \\
+
+\noindent Jednakowoż mimo początkowo dobrze prezentującego się wyniku należy uwzględnić fakt, że klasyfikując każdy z artykółów jako należący do kalsy use uzyskali byśmy dokładność na poziomie 79.34\% jest to spowodowane znaczącą przewagą testów należących do klasy usa. Tak więc nasz klasyfikator osiągnął dokładność wyższą o zaledwie 1.83 punktu procentowego. \\
+
+\noindent Warte wspomnienia jest również to, że podczas pracy nad implementacją zliczania wartości cech 1-3 (cech słownikowych) możliwe okazało się uproszczenie wzoru na bazie, którego wartości te są zliczane (wzór (1)) w wyniku czego zastąpiony on został w implementacji przez poniższy wzór (53): \\
 
 Niech $C$ będzie zbiorem wszystkich krajów, a $\text{Tekst}$ będzie zbiorem wszystkich wartości słownikowych w tekście. Niech $\text{Wystąpienia}(c)$ będzie funkcją zwracającą liczbę wystąpień kraju $c$ w tekście. Wówczas możemy zapisać funkcję matematyczną jako:
 
@@ -1053,7 +1059,7 @@ Niech $C$ będzie zbiorem wszystkich krajów, a $\text{Tekst}$ będzie zbiorem w
 \text{Kraj} = \arg\max_{c \in C} \text{Wystąpienia}(c)
 \end{equation}
 
-gdzie $\arg\max$ oznacza kraj, dla którego funkcja $\text{Wystąpienia}(c)$ zwraca maksymalną wartość. \\
+\noindent gdzie $\arg\max$ oznacza kraj, dla którego funkcja $\text{Wystąpienia}(c)$ zwraca maksymalną wartość. \\
 
 Funkcja $\text{Wystąpienia}(c)$ może być zdefiniowana jako:
 
@@ -1078,11 +1084,7 @@ gdzie:
 
 %==============================================================================================
 
-
-\section{Braki w realizacji projektu 1.}
-Wymienić wg opisu Projektu 1. wszystkie niezrealizowane obowiązkowe elementy projektu, ewentualnie
-podać merytoryczne (ale nie czasowe) przyczyny tych braków. 
-
+\newpage
 
 \begin{thebibliography}{0}
 \bibitem{tadeusiewicz90} R. Tadeusiewicz: Rozpoznawanie obrazów, PWN, Warszawa, 1991.  
