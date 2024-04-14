@@ -8,6 +8,8 @@
 \usepackage{listingsutf8}
 \usepackage{longtable}
 \usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
 
 %{Informatyka stosowana 2024, I st., semestr VI}
 
@@ -780,10 +782,11 @@ W celu zbadania skuteczności utworzonego klasyfikatora, przeprowadzone zostaną
 
 \noindent Oczekuje się, że wyniki eksperymentów pozwolą na wybór optymalnej metryki odległości oraz odpowiedniej wartości parametru k, co przyczyni się do uzyskania wysokiej skuteczności klasyfikatora na danych testowych.
 
-
 \input{table_euclides.tex}
 \input{table_street.tex}
 \input{table_czebyszew.tex}
+
+\newpage
 
 \subsubsection*{Podsumowanie eksperymentu}
 
@@ -791,13 +794,24 @@ W celu zbadania skuteczności utworzonego klasyfikatora, przeprowadzone zostaną
 
 \input{table_metricks_best}
 
+\newpage
+
+\noindent Dodatkowo utworzony został wykres pokazujący zmiany wartości dokładności w zależności od przyjętego k.
+
+\begin{figure}[H]
+    \centering
+    \raisebox{-\height}{\includegraphics[width=1.0\textwidth]{plot.png}}
+    \caption{Wykres zależności dokładności do wartości k}
+    \label{fig:szum_jednostkowy_bin}
+\end{figure}
+
 \noindent Przyglądając się wynikom eksperymentu możemy zauważyć, że uzyskane wyniki są bez wątpienia zależne od wartości k. Dodatkowo uzyskane wyniki rosną wraz z wartością parametru, ale tylko do pewnego momentu, po uzyskaniu maksymalnej wartości dokładności wartość tej miary spada i mimo niewielkich wahań nigdy nie uzyskuje wyników wyższych niż wspomniana wcześniej wartość. \\
 
 \noindent Mimo że uzyskane wartości miar jakości są bardzo podobne dla każdej z metryk to najwyższą dokładność uzyskaliśmy dla metryki Ulicznej przy k wynoszącym 12. \\
 
 \newpage
 
-\noindent Kolejnym faktem, który należy wypunktować jest powtażająca się przewaga wartości czułości nad miarą precyzji. Jeśli precision jest niższa niż recall, to model częściej popełnia błędy typu fałszywie pozytywne niż fałszywie negatywne. Innymi słowy, jest bardziej skłonny do błędnie identyfikowania wyników jako pozytywne, nawet gdy są one fałszywe. Może to oznaczać, że model jest zbyt optymistyczny w klasyfikowaniu przypadków. \\
+\noindent Kolejnym faktem, który należy wypunktować jest powtarzająca się przewaga wartości czułości nad miarą precyzji. Jeśli precision jest niższa niż recall, to model częściej popełnia błędy typu fałszywie pozytywne niż fałszywie negatywne. Innymi słowy, jest bardziej skłonny do błędnie identyfikowania wyników jako pozytywne, nawet gdy są one fałszywe. Może to oznaczać, że model jest zbyt optymistyczny w klasyfikowaniu przypadków. \\
 
 \noindent Należy również zauważyć, że istnieje wiele wartości wynoszących 0 bądź też wartości do 0 zbliżone, może to być spowodowane tym, że niektóre kraje są znacznie mniej licznie reprezentowane niż inne. W przypadku tych słabo reprezentowanych klas, model może mieć trudności w wyuczeniu się cech charakterystycznych dla tych klas, co prowadzi do niskich wartości miar jakości klasyfikacji.
 
@@ -809,9 +823,15 @@ Przez rozkład danych biorących udział w badaniu rozumiemy jaką część dany
 
 \noindent Z racji na fakt, że przyjęty zbiór danych nie pozwala na podział równy, wartości zostaną zaokrąglone w dół w kierunku zbioru testowego. Poniższe tabele zawierają wyniki eksperymentu dla każdej z metryk z uwzględnieniem wartości jednostkowych dla każdego z badanych krajów:
 
+\newpage
+\thispagestyle{empty}
 \input{table_p_euclides.tex}
+\thispagestyle{empty}
 \input{table_p_street.tex}
+\thispagestyle{empty}
 \input{table_p_czebyszew.tex}
+\thispagestyle{empty}
+\newpage
 
 \subsubsection*{Podsumowanie eksperymentu}
 
@@ -843,6 +863,8 @@ Przez rozkład danych biorących udział w badaniu rozumiemy jaką część dany
 \input{table_c_street.tex}
 \input{table_c_czebyszew.tex}
 
+\newpage
+
 \subsubsection*{Podsumowanie eksperymentu}
 
 W poniższej tabeli znajdują się wyniki dokładności dla każdej z grup, wraz z różnicą między najlepszym otrzymanym wynikiem dla każdej z metryk uzyskanym w poprzednim eksperymencie. Wyniki zostały zapisane z dużą dokładnością po przecinku ze względu na to, że różnice między nimi są bardzo niewielkie. \\
@@ -867,7 +889,7 @@ W poniższej tabeli znajdują się wyniki dokładności dla każdej z grup, wraz
 
 
 
-\noindent Tak jak zostało już wspomniane, różnice między wynikami dla wszystkich cech oraz dla poszczególnych grup cech są nadwyraz niewielkie, istnieją jednak wpływy każdej z wyłączonych grup cech na ostateczny wynik klasyfikacji. \\
+\noindent Tak jak zostało już wspomniane, różnice między wynikami dla wszystkich cech oraz dla poszczególnych grup cech są nad wyraz niewielkie, istnieją jednak wpływy każdej z wyłączonych grup cech na ostateczny wynik klasyfikacji. \\
 
 \noindent Analiza wyników wskazuje, że niektóre cechy mogą mieć zarówno pozytywny, jak i negatywny wpływ na dokładność klasyfikacji. Na przykład, dla metryki Euklidesowej, wyłączenie niektórych cech może prowadzić do poprawy dokładności klasyfikacji, podczas gdy dla metryki Ulicznej takie wyłączenie może prowadzić do pogorszenia wyników. \\
 
@@ -884,176 +906,14 @@ W poniższej tabeli znajdują się wyniki dokładności dla każdej z grup, wraz
 
 Już na pierwszy rzut oka widzimy, że przygotowany program działa zasadniczo poprawnie, najwyższa osiągnięta dokładność wyniosła 81.17\% (wynik uzyskany dla Metryki Euklidesowej, k = 17 oraz 10\% udziale danych testowych do uczących). Poniżej raz jeszcze przedstawione zostały najwyższe wyniki uzyskane dla każdej z metryk z uwzględnieniem wartości jednostkowych dla każdego z badanych krajów. \\
 
-\begin{table}[H]
-    \centering
-    \caption{results}
-    \label{tab:my_label}
-    \begin{tabular}{|c|c|c|c|c|c|} 
-        \hline 
-        \multirow{2}{*}{k} & \multirow{2}{*}{Wartości ogólne} & \multicolumn{4}{|c|}{Wartości jednostkowe} \\ 
-        \cline{3-6}
-         & & kraj & precyzja & czułość & f1 \\ 
-        \hline
-        
-    17 &  
-        \begin{tabular}{@{}c@{}}
-        accuracy: 0.\\ 
-        precisionC: 0.\\
-        recallC: 0.\\ 
-        f1C: 0.
-        \end{tabular} & 
-        \begin{tabular}{@{}c@{}}
-        usa: \\ 
-        canada: \\
-        japan: \\
-        uk: \\  
-        france: \\
-        west-germany \\
-        \end{tabular} &
-        \begin{tabular}{@{}c@{}}
-        \\
-        0. \\ 
-        0. \\
-        0. \\
-        0. \\  
-        0. \\
-        0. \\
-        \\
-        \end{tabular} &   
-        \begin{tabular}{@{}c@{}}
-        \\
-        0. \\ 
-        0. \\
-        0. \\
-        0. \\  
-        0. \\
-        0. \\
-        \\
-        \end{tabular} & 
-        \begin{tabular}{@{}c@{}}
-        \\
-        0. \\ 
-        0. \\
-        0. \\
-        0. \\  
-        0. \\
-        0. \\
-        \\
-        \end{tabular} \\
-        \hline
-
- 12 &  
-    \begin{tabular}{@{}c@{}} 
-    accuracy: 0.\\ 
-    precisionC: 0.\\
-    recallC: 0.\\ 
-    f1C: 0.
-    \end{tabular} & 
-    \begin{tabular}{@{}c@{}} 
-    \\
-    usa: \\ 
-    canada: \\
-    japan: \\
-    uk: \\  
-    france: \\
-    west-germany \\
-    \\
-    \end{tabular} &
-    
-    \begin{tabular}{@{}c@{}} 
-    \\
-    0. \\ 
-    0. \\
-    0. \\
-    0. \\  
-    0. \\
-    0. \\
-    \\
-    \end{tabular} &   
-    
-    \begin{tabular}{@{}c@{}} 
-    \\
-    0. \\ 
-    0. \\
-    0. \\
-    0. \\  
-    0. \\
-    0. \\
-    \\
-    \end{tabular} & 
-    
-    \begin{tabular}{@{}c@{}} 
-    \\
-    0. \\ 
-    0. \\
-    0. \\
-    0. \\  
-    0. \\
-    0. \\
-    \\ 
-    \end{tabular} \\
-    \hline
-    
-    19 &  
-    \begin{tabular}{@{}c@{}} 
-    accuracy: 0.\\ 
-    precisionC: 0.\\
-    recallC: 0.\\ 
-    f1C: 0.
-    \end{tabular} & 
-    \begin{tabular}{@{}c@{}} 
-    \\
-    usa: \\ 
-    canada: \\
-    japan: \\
-    uk: \\  
-    france: \\
-    west-germany \\
-    \\
-    \end{tabular} &
-    
-    \begin{tabular}{@{}c@{}} 
-    \\
-    0. \\ 
-    0. \\
-    0. \\
-    0. \\  
-    0. \\
-    0. \\
-    \\
-    \end{tabular} &   
-    
-    \begin{tabular}{@{}c@{}} 
-    \\
-    0. \\ 
-    0. \\
-    0. \\
-    0. \\  
-    0. \\
-    0. \\
-    \\
-    \end{tabular} & 
-    
-    \begin{tabular}{@{}c@{}} 
-    \\
-    0. \\ 
-    0. \\
-    0. \\
-    0. \\  
-    0. \\
-    0. \\
-    \\ 
-    \end{tabular} \\
-    \hline
-    \end{tabular}  
-\end{table}
+\input{table_results.tex}
 
 
-\noindent Jednakowoż mimo początkowo dobrze prezentującego się wyniku należy uwzględnić fakt, że klasyfikując każdy z artykółów jako należący do kalsy use uzyskali byśmy dokładność na poziomie 79.34\% jest to spowodowane znaczącą przewagą testów należących do klasy usa. Tak więc nasz klasyfikator osiągnął dokładność wyższą o zaledwie 1.83 punktu procentowego. \\
+\noindent Jednakowoż mimo początkowo dobrze prezentującego się wyniku należy uwzględnić fakt, że klasyfikując każdy z artykułów jako należący do klasy use uzyskali byśmy dokładność na poziomie 79.34\% jest to spowodowane znaczącą przewagą testów należących do klasy usa. Tak więc nasz klasyfikator osiągnął dokładność wyższą o zaledwie 1.83 punktu procentowego. \\
 
 \noindent Warte wspomnienia jest również to, że podczas pracy nad implementacją zliczania wartości cech 1-3 (cech słownikowych) możliwe okazało się uproszczenie wzoru na bazie, którego wartości te są zliczane (wzór (1)) w wyniku czego zastąpiony on został w implementacji przez poniższy wzór (53): \\
 
-Niech $C$ będzie zbiorem wszystkich krajów, a $\text{Tekst}$ będzie zbiorem wszystkich wartości słownikowych w tekście. Niech $\text{Wystąpienia}(c)$ będzie funkcją zwracającą liczbę wystąpień kraju $c$ w tekście. Wówczas możemy zapisać funkcję matematyczną jako:
+\noindent Niech $C$ będzie zbiorem wszystkich krajów, a $\text{Tekst}$ będzie zbiorem wszystkich wartości słownikowych w tekście. Niech $\text{Wystąpienia}(c)$ będzie funkcją zwracającą liczbę wystąpień kraju $c$ w tekście. Wówczas możemy zapisać funkcję matematyczną jako:
 
 \begin{equation}
 \text{Kraj} = \arg\max_{c \in C} \text{Wystąpienia}(c)
@@ -1080,11 +940,12 @@ gdzie:
 
 \noindent Ponadto, obserwujemy, że wartości czułości często przeważają nad miarą precyzji. Jeśli precyzja jest niższa niż czułość, to model jest bardziej skłonny do popełniania błędów typu fałszywie pozytywne niż fałszywie negatywne. To może oznaczać, że model jest zbyt optymistyczny w klasyfikowaniu przypadków. \\
 
+\newpage
+
 \noindent Należy również zauważyć, że istnieje wiele wartości wynoszących 0 lub wartości do 0 zbliżonych. Może to być spowodowane tym, że niektóre kraje są znacznie mniej licznie reprezentowane niż inne. W przypadku tych słabo reprezentowanych klas, model może mieć trudności w wyuczeniu się cech charakterystycznych dla tych klas, co prowadzi do niskich wartości miar jakości klasyfikacji. \\
 
 %==============================================================================================
 
-\newpage
 
 \begin{thebibliography}{0}
 \bibitem{tadeusiewicz90} R. Tadeusiewicz: Rozpoznawanie obrazów, PWN, Warszawa, 1991.  
@@ -1095,4 +956,5 @@ gdzie:
 
 Literatura zawiera wyłącznie źródła recenzowane i/lub o potwierdzonej wiarygodności,
 możliwe do weryfikacji i cytowane w sprawozdaniu. 
+
 \end{document}
